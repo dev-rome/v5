@@ -24,7 +24,7 @@ export function About() {
           className="mb-12 flex items-end gap-4 border-b border-white/10 pb-4"
         >
           <h2 className="text-4xl md:text-5xl font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-            OPERATOR_DOSSIER
+            About
           </h2>
           <span className="text-neutral-600 font-mono text-sm mb-2">v5.0.1 // CLASSIFIED</span>
         </motion.div>

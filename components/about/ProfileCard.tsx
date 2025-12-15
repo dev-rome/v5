@@ -18,8 +18,8 @@ export function ProfileCard() {
                     <User className="w-8 h-8" />
                 </div>
                 <div>
-                    <h3 className="text-xl font-bold text-white">DEV ROME</h3>
-                    <p className="text-xs font-mono text-primary">Lvl. 25 Engineer</p>
+                    <h3 className="text-xl font-bold text-white">Jerome Haynes</h3>
+                    <p className="text-xs font-mono text-primary">Software Engineer</p>
                 </div>
             </div>
 

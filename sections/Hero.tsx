@@ -2,8 +2,8 @@
 
 import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
-import { ParticleBackground } from "./ParticleBackground";
-import { HeroAvatar } from "./HeroAvatar";
+import { ParticleBackground } from "../components/hero/ParticleBackground";
+import { HeroAvatar } from "../components/hero/HeroAvatar";
 
 export function Hero() {
   return (

@@ -1,5 +1,6 @@
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
+import { Methodology } from "@/sections/Methodology";
 // import { Projects } from "@/components/sections/Projects";
 // import { Contact } from "@/components/sections/Contact";
 import { FloatingControls } from "@/components/FloatingControls";
@@ -10,8 +11,9 @@ export default function Home() {
       <FloatingControls />
       <Hero />
       <About />
+      <Methodology />
       {/* <Projects /> */}
       {/* <Contact /> */}
     </main>
   );
-}
+};

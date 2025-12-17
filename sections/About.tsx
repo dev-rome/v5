@@ -21,12 +21,12 @@ export function About() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="mb-12 flex items-end gap-4 border-b border-white/10 pb-4"
+          className="mb-12 flex flex-col md:flex-row md:items-end gap-2 md:gap-4 border-b border-white/10 pb-4"
         >
           <h2 className="text-4xl md:text-5xl font-bold font-mono text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
             About
           </h2>
-          <span className="text-neutral-600 font-mono text-sm mb-2">v5.0.1 // CLASSIFIED</span>
+          <span className="text-neutral-600 font-mono text-sm mb-1 md:mb-2">v5.0.1 // CLASSIFIED</span>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

@@ -1,0 +1,110 @@
+.nightGradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #02020a, #0b0b20, #1a1a3a);
+}
+
+.moonWrapper {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    width: 6rem;
+    height: 6rem;
+    z-index: 0;
+}
+
+@media (min-width: 48rem) {
+    .moonWrapper {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+.moonSvg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 2.5rem rgba(255, 255, 255, 0.4));
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 9999px;
+    width: 0.125rem;
+    height: 0.125rem;
+}
+
+.clouds {
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1), transparent 70%);
+}
+
+.shootingStarContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.shootingStar1 {
+    top: 0;
+    right: 2.5rem;
+}
+
+.shootingStar2 {
+    top: 5rem;
+    right: 0;
+}
+
+.shootingStar3 {
+    top: -2.5rem;
+    right: 20%;
+}
+
+.starTrail {
+    transform: rotate(135deg);
+    display: flex;
+    align-items: center;
+}
+
+.trailLine {
+    height: 1px;
+}
+
+.whiteTrail {
+    width: 9.375rem;
+    background: linear-gradient(to right, transparent, white, transparent);
+}
+
+.cyanTrail {
+    width: 12.5rem;
+    background: linear-gradient(to right, transparent, #a5f3fc, transparent);
+}
+
+.purpleTrail {
+    width: 7.5rem;
+    background: linear-gradient(to right, transparent, #e9d5ff, transparent);
+}
+
+.starHead {
+    width: 1rem;
+    height: 1rem;
+    filter: drop-shadow(0 0 0.3125rem rgba(255, 255, 255, 0.8));
+    color: white;
+}
+
+.cyanHead {
+    width: 0.75rem;
+    height: 0.75rem;
+    color: #a5f3fc;
+    filter: drop-shadow(0 0 0.3125rem cyan);
+}
+
+.purpleHead {
+    width: 0.75rem;
+    height: 0.75rem;
+    color: #e9d5ff;
+    filter: drop-shadow(0 0 0.3125rem purple);
+}

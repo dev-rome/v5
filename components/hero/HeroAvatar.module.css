@@ -1,0 +1,139 @@
+.container {
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    width: 18rem;
+    height: 18rem;
+    margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+    .container {
+        width: 24rem;
+        height: 24rem;
+    }
+}
+
+.bgPulse {
+    position: absolute;
+    inset: 1rem;
+    background-color: rgba(0, 255, 157, 0.1);
+    border-radius: 9999px;
+    filter: blur(2.5rem);
+}
+
+.popupLeft,
+.popupRight {
+    position: absolute;
+    top: 2.5rem;
+    padding: 1rem;
+    width: 10rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(var(--glass-blur));
+    z-index: 30;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.container:hover .popupLeft,
+.container:hover .popupRight {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.popupLeft {
+    left: -6rem;
+    border-left: 0.125rem solid var(--primary);
+    box-shadow: 0 0 1.25rem rgba(0, 255, 157, 0.2);
+    transform: translateX(-1rem);
+}
+
+.popupRight {
+    right: -6rem;
+    top: 5rem;
+    border-right: 0.125rem solid var(--secondary);
+    box-shadow: 0 0 1.25rem rgba(189, 0, 255, 0.2);
+    transform: translateX(1rem);
+}
+
+.popupHeaderLeft {
+    margin-bottom: 0.5rem;
+    border-bottom: 0.0625rem solid var(--glass-border);
+    padding-bottom: 0.25rem;
+}
+
+.labelActive {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.1em;
+}
+
+.popupHeaderRight {
+    margin-bottom: 0.5rem;
+    border-bottom: 0.0625rem solid var(--glass-border);
+    padding-bottom: 0.25rem;
+    text-align: right;
+}
+
+.labelInterests {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--secondary);
+    letter-spacing: 0.1em;
+}
+
+.popupBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.popupBodyRight {
+    align-items: flex-end;
+}
+
+.itemRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+}
+
+.itemText {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+}
+
+.iconActive {
+    color: var(--primary);
+}
+
+.iconInterest {
+    color: var(--secondary);
+}
+
+.characterContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0.9375rem 2.1875rem rgba(0, 0, 0, 0.8));
+}
+
+.pulseAnimation {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

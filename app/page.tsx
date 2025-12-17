@@ -4,10 +4,11 @@ import { Methodology } from "@/sections/Methodology";
 // import { Projects } from "@/components/sections/Projects";
 // import { Contact } from "@/components/sections/Contact";
 import { FloatingControls } from "@/components/FloatingControls";
+import styles from "./Layout.module.css";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen w-full relative">
+    <main className={styles.pageMain}>
       <FloatingControls />
       <Hero />
       <About />

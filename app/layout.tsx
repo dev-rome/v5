@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+import styles from "./Layout.module.css";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,11 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${jetbrainsMono.variable} antialiased selection:bg-primary/30 selection:text-primary`}
-      >
-        <div className="scanline" />
+    <html lang="en" className={`${geistSans.variable} ${jetbrainsMono.variable}`}>
+      <body className={styles.body}>
+        <div className={styles.scanline} />
         {children}
       </body>
     </html>

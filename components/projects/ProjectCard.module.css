@@ -1,0 +1,88 @@
+.projectCardWrapper {
+    position: relative;
+    min-height: 25rem;
+}
+
+.projectCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: 0.0625rem solid var(--glass-border);
+    background-color: var(--glass-bg);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.projectCard:hover {
+    border-color: var(--accent);
+}
+
+.imageContainer {
+    width: 100%;
+    height: 14rem;
+    position: relative;
+    background-color: #0f0f0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cardHoverOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.projectCard:hover .cardHoverOverlay {
+    opacity: 1;
+}
+
+.imagePlaceholder {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.1);
+    font-weight: 900;
+}
+
+.contentBody {
+    padding: 1.5rem;
+}
+
+.projectTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.projectDescShort {
+    font-size: 0.875rem;
+    color: #a3a3a3;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techTag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.25rem;
+    color: #d4d4d4;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+}

@@ -2,15 +2,10 @@
 
 import { motion } from "motion/react";
 import { Cpu } from "lucide-react";
+import { SKILLS } from "@/data/about";
 import styles from "./AboutComponents.module.css";
 
 export function SkillsGrid() {
-    const skills = [
-        "HTML", "CSS", "JavaScript", "React", "Next.js",
-        "TypeScript", "Tailwind CSS", "Framer Motion",
-        "Storybook", "GraphQL"
-    ];
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,7 +19,7 @@ export function SkillsGrid() {
                 SKILLS
             </h3>
             <div className={styles.skillsContainer}>
-                {skills.map((skill) => (
+                {SKILLS.map((skill) => (
                     <span
                         key={skill}
                         className={styles.skillTag}

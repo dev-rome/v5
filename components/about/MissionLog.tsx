@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { History } from "lucide-react";
+import { MISSION_LOG } from "@/data/about";
 import styles from "./AboutComponents.module.css";
 
 export function MissionLog() {
@@ -18,70 +19,33 @@ export function MissionLog() {
                 MISSION_LOG
             </h3>
             <div className={styles.timelineContainer}>
-                <div className={`${styles.timelineItem} group`}>
-                    <div className={styles.nodeWrapper}>
-                        <div className={`${styles.nodeDot} ${styles.primaryDot}`} />
-                        <div className={styles.connectorLine} />
-                    </div>
-                    <div className={styles.contentBox}>
-                        <div className={styles.verticalLine} />
-                        <div className={styles.contentHeader}>
-                            <div>
-                                <h4 className={`${styles.roleTitle} group-hover:text-[var(--primary)]`}>Glassdoor</h4>
-                                <p className={`${styles.roleSubtitle} ${styles.primaryText}`}>Front-End Software Engineer Intern</p>
-                            </div>
-                            <span className={styles.dateTag}>05/2025 – 08/2025</span>
+                {MISSION_LOG.map((item, index) => (
+                    <div key={index} className={`${styles.timelineItem} group`}>
+                        <div className={styles.nodeWrapper}>
+                            <div className={`${styles.nodeDot} ${index === 0 ? styles.primaryDot : index === 1 ? styles.secondaryDot : styles.accentDot}`} />
+                            <div className={index === MISSION_LOG.length - 1 ? styles.connectorLineFade : styles.connectorLine} />
                         </div>
-                        <ul className={`${styles.taskList} ${styles.primaryMarker}`}>
-                            <li>Migrated core UI modules (Left & Right Rail) to Next.js App Router.</li>
-                            <li>Developed reusable UI components in Storybook for design consistency.</li>
-                            <li>Integrated GraphQL for efficient, type-safe data fetching.</li>
-                            <li>Implemented unit tests with Vitest, increasing coverage.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className={`${styles.timelineItem} group`}>
-                    <div className={styles.nodeWrapper}>
-                        <div className={`${styles.nodeDot} ${styles.secondaryDot}`} />
-                        <div className={styles.connectorLine} />
-                    </div>
-                    <div className={styles.contentBox}>
-                        <div className={styles.verticalLine} />
-                        <div className={styles.contentHeader}>
-                            <div>
-                                <h4 className={`${styles.roleTitle} group-hover:text-[var(--secondary)]`}>The Hero Company</h4>
-                                <p className={`${styles.roleSubtitle} ${styles.secondaryText}`}>Jr. Developer (Frontend)</p>
+                        <div className={styles.contentBox}>
+                            <div className={styles.verticalLine} />
+                            <div className={styles.contentHeader}>
+                                <div>
+                                    <h4 className={`${styles.roleTitle} group-hover:text-[var(--${index === 0 ? 'primary' : index === 1 ? 'secondary' : 'accent'})]`}>
+                                        {item.company}
+                                    </h4>
+                                    <p className={`${styles.roleSubtitle} ${index === 0 ? styles.primaryText : index === 1 ? styles.secondaryText : styles.accentText}`}>
+                                        {item.role}
+                                    </p>
+                                </div>
+                                <span className={styles.dateTag}>{item.period}</span>
                             </div>
-                            <span className={styles.dateTag}>03/2024 – 09/2025</span>
+                            <ul className={`${styles.taskList} ${index === 0 ? styles.primaryMarker : index === 1 ? styles.secondaryMarker : styles.accentMarker}`}>
+                                {item.tasks.map((task, tIndex) => (
+                                    <li key={tIndex}>{task}</li>
+                                ))}
+                            </ul>
                         </div>
-                        <ul className={`${styles.taskList} ${styles.secondaryMarker}`}>
-                            <li>Authored 20+ responsive websites, increasing validation rates by 10%.</li>
-                            <li>Maintained security/performance via MySQL Workbench & SSL management.</li>
-                            <li>Managed SSL renewals to reduce security vulnerabilities.</li>
-                        </ul>
                     </div>
-                </div>
-                <div className={`${styles.timelineItem} group`}>
-                    <div className={styles.nodeWrapper}>
-                        <div className={`${styles.nodeDot} ${styles.accentDot}`} />
-                        <div className={styles.connectorLineFade} />
-                    </div>
-                    <div className={styles.contentBox}>
-                        <div className={styles.verticalLine} />
-                        <div className={styles.contentHeader}>
-                            <div>
-                                <h4 className={`${styles.roleTitle} group-hover:text-[var(--accent)]`}>Freelance</h4>
-                                <p className={`${styles.roleSubtitle} ${styles.accentText}`}>Web Developer</p>
-                            </div>
-                            <span className={styles.dateTag}>01/2018 – 09/2025</span>
-                        </div>
-                        <ul className={`${styles.taskList} ${styles.accentMarker}`}>
-                            <li>Developed 15+ websites for e-commerce and small businesses.</li>
-                            <li>Achieved Top Rated Plus status and 100% Job Success Score on Upwork.</li>
-                            <li>Improved revenue/trust by integrating secure payment gateways.</li>
-                        </ul>
-                    </div>
-                </div>
+                ))}
             </div>
         </motion.div>
     );

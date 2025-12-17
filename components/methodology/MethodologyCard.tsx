@@ -1,13 +1,9 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import { MethodologyCardProps } from "@/types/methodology";
 import styles from "./MethodologyCard.module.css";
 
-interface MethodologyCardProps {
-    number: string;
-    title: string;
-    description: string;
-}
 
 export function MethodologyCard({ number, title, description }: MethodologyCardProps) {
     return (

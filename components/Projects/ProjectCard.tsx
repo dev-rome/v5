@@ -23,8 +23,9 @@ export function ProjectCard({ project, clickedId, isMobile, onCardClick, onExitC
                         className={styles.projectCard}
                         whileHover={{ y: -5, borderColor: project.color }}
                         transition={{ duration: 0.2 }}
-                        initial={isMobile ? { opacity: 0 } : { y: -100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
+                        initial={isMobile ? { opacity: 0 } : { y: 20, opacity: 0 }}
+                        whileInView={isMobile ? { opacity: 1 } : { y: 0, opacity: 1 }}
+                        viewport={{ once: true, margin: "-50px" }}
                         exit={isMobile ? {
                             opacity: 0,
                             transition: { duration: 0.2 }

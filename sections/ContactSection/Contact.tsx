@@ -1,39 +1,50 @@
-// import styles from "./Contact.module.css";
-// import { Github, Linkedin, Mail, Twitch } from "lucide-react";
+"use client";
 
-// export function Contact() {
-//   return (
-//     <section className={styles.sectionContainer}>
-//       <div className={styles.maxContainer}>
-//         <h2 className={styles.sectionTitle}>
-//           <span className={styles.accentSymbol}>&gt;</span> ESTABLISH_LINK
-//         </h2>
-//         <p className={styles.description}>
-//           Ready to collaborate or just want to chat about games? Send a signal.
-//         </p>
+import { motion } from "motion/react";
+import { ContactForm } from "@/components/Contact/ContactForm";
+import { ContactInfo } from "@/components/Contact/ContactInfo";
+import styles from "./Contact.module.css";
 
-//         <a
-//           href="mailto:contact@example.com"
-//           className={styles.ctaButton}
-//         >
-//           SEND_MESSAGE
-//         </a>
+export function Contact() {
+    const currentYear = new Date().getFullYear();
 
-//         <div className={styles.socialGrid}>
-//           <a href="#" className={styles.socialIconLink}>
-//             <Github className="w-6 h-6" />
-//           </a>
-//           <a href="#" className={styles.socialIconLink}>
-//             <Linkedin className="w-6 h-6" />
-//           </a>
-//           <a href="#" className={`${styles.socialIconLink} ${styles.twitchLink}`}>
-//             <Twitch className="w-6 h-6" />
-//           </a>
-//           <a href="#" className={styles.socialIconLink}>
-//             <Mail className="w-6 h-6" />
-//           </a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
+    return (
+        <section className={styles.sectionContainer} id="contact" aria-label="Contact">
+            <div className={styles.maxContainer}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className={styles.headerWrapper}
+                >
+                    <h2 className={styles.sectionTitle}>CONTACT</h2>
+                    <span className={styles.subtitle}>// TRANSMISSION</span>
+                </motion.div>
+
+                <div className={styles.contentGrid}>
+                    <ContactInfo />
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className={styles.formCard}
+                    >
+                        <div className={styles.bgPulse} />
+
+                        <ContactForm />
+                    </motion.div>
+                </div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 }}
+                    className={styles.footerCopyright}
+                >
+                    <p>© {currentYear} Jerome Haynes. All systems nominal.</p>
+                </motion.div>
+            </div>
+        </section>
+    );
+}

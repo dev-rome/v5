@@ -9,6 +9,7 @@ export interface Project {
         repo?: string;
     };
     color: string;
+    image?: string;
 }
 
 export interface ProjectModalProps {

@@ -1,33 +1,63 @@
 import { NextResponse } from 'next/server';
+import { z } from 'zod';
+import nodemailer from 'nodemailer';
 
-export async function POST(request: Request) {
-    const email = process.env.FORM_EMAIL;
+const contactSchema = z.object({
+    name: z.string().min(2, "Name is required"),
+    email: z.string().email("Invalid email address"),
+    subject: z.string().min(5, "Subject must be at least 5 characters").transform(s => s || undefined).optional(),
+    message: z.string().min(10, "Message must be at least 10 characters"),
+});
 
-    if (!email) {
-        return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
-    }
-
+export async function POST(req: Request) {
     try {
-        const body = await request.json();
+        const body = await req.json();
+        const result = contactSchema.safeParse(body);
 
-        const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(body)
-        });
-
-        if (!response.ok) {
-            throw new Error('Form submission failed');
+        if (!result.success) {
+            return NextResponse.json(
+                { error: "Validation failed", details: result.error.flatten() },
+                { status: 400 }
+            );
         }
 
-        const data = await response.json();
-        return NextResponse.json(data);
+        const { name, email, subject, message } = result.data;
+        // Create a transporter
+        const transporter = nodemailer.createTransport({
+            host: process.env.SMTP_HOST,
+            port: Number(process.env.SMTP_PORT) || 587,
+            secure: false,
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+            },
+        });
 
+        const mailOptions = {
+            from: process.env.SMTP_FROM || '"Portfolio Contact" <no-reply@example.com>',
+            to: process.env.SMTP_USER,
+            replyTo: email,
+            subject: subject || `New Contact Form Submission from ${name}`,
+            text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage:\n${message}`,
+            html: `
+            <div style="font-family: Arial, sans-serif; color: #333;">
+                <h2>New Contact Form Submission</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
+                <hr />
+                <p><strong>Message:</strong></p>
+                <p style="white-space: pre-wrap;">${message}</p>
+            </div>
+        `,
+        };
+        await transporter.sendMail(mailOptions);
+        return NextResponse.json({ success: true, message: "Email sent successfully" });
     } catch (error) {
-        console.error('Contact form error:', error);
-        return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+        console.error("Email error:", error);
+        return NextResponse.json(
+            { error: "Failed to send email. Please try again later." },
+            { status: 500 }
+        );
     }
 }

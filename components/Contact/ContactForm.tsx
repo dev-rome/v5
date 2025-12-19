@@ -7,18 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormInput, FormTextarea } from "./FormFields";
 import { SuccessMessage } from "./SuccessMessage";
 import { ContactFormProps } from "@/types/contact";
+import { contactSchema, ContactFormData } from "@/lib/contact";
 import { Send } from "lucide-react";
 import styles from "./ContactForm.module.css";
-
-const contactSchema = z.object({
-    name: z.string().min(2, "Name is required"),
-    email: z.string().email("Please enter a valid email"),
-    subject: z.string().min(5, "Subject must be at least 5 characters").transform(s => s || undefined).optional(),
-    message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
-
 
 export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
     const [submitted, setSubmitted] = useState(false);

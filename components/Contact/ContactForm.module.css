@@ -46,6 +46,7 @@
 }
 
 .inputError:focus {
+    border-color: #ef4444;
     box-shadow: 0 0 0 1px #ef4444;
 }
 

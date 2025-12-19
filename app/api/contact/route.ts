@@ -1,13 +1,6 @@
 import { NextResponse } from 'next/server';
-import { z } from 'zod';
 import nodemailer from 'nodemailer';
-
-const contactSchema = z.object({
-    name: z.string().min(2, "Name is required"),
-    email: z.string().email("Invalid email address"),
-    subject: z.string().min(5, "Subject must be at least 5 characters").transform(s => s || undefined).optional(),
-    message: z.string().min(10, "Message must be at least 10 characters"),
-});
+import { contactSchema } from '@/lib/contact';
 
 export async function POST(req: Request) {
     try {

@@ -1,11 +1,6 @@
 import { Quote, Star } from "lucide-react";
-import { Testimonial } from "@/types/testimonials";
+import { TestimonialCardProps } from "@/types/testimonials";
 import styles from "./TestimonialCard.module.css";
-
-interface TestimonialCardProps {
-    testimonial: Testimonial;
-    index: number;
-}
 
 export function TestimonialCard({ testimonial, index }: TestimonialCardProps) {
     const isFeatured = index === 2;

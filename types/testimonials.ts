@@ -5,3 +5,8 @@ export interface Testimonial {
     role?: string;
     rating?: number;
 }
+
+export interface TestimonialCardProps {
+    testimonial: Testimonial;
+    index: number;
+}

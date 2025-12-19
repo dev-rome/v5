@@ -1,7 +1,7 @@
-import { Hero } from "@/sections/Hero";
-import { About } from "@/sections/About";
-import { Methodology } from "@/sections/Methodology";
-import { Projects } from "@/sections/Projects";
+import { Hero } from "@/sections/HeroSection/Hero";
+import { About } from "@/sections/AboutSection/About";
+import { Methodology } from "@/sections/MethodologySection/Methodology";
+import { Projects } from "@/sections/ProjectsSection/Projects";
 // import { Contact } from "@/components/sections/Contact";
 import { FloatingControls } from "@/components/FloatingControls";
 import styles from "./Layout.module.css";

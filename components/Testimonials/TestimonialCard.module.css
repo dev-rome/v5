@@ -1,0 +1,113 @@
+.cardWrapper {
+    height: 100%;
+    margin-block: 1rem;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-0.5rem);
+    border-color: rgba(0, 255, 157, 0.3);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3), 0 0 1rem rgba(0, 255, 157, 0.1);
+}
+
+.quoteIcon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: rgba(255, 255, 255, 0.05);
+    transition: color 0.3s ease;
+}
+
+.card:hover .quoteIcon {
+    color: rgba(0, 255, 157, 0.2);
+}
+
+.quoteText {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--white);
+    margin-bottom: 2rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.clientInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatarPlaceholder {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.clientDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.clientName {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.stars {
+    color: #fbbf24;
+}
+
+@media (min-width: 48rem) {
+    .featuredCard {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .featuredCard .clientInfo {
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 0;
+        padding-left: 2rem;
+        min-width: 250px;
+    }
+
+    .featuredCard .quoteIcon {
+        right: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.1;
+    }
+}

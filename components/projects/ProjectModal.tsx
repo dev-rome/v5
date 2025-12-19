@@ -21,8 +21,8 @@ export function ProjectModal({ project, isMobile, onClose, onExitComplete }: Pro
                         transition={isMobile ? { duration: 0.2 } : {
                             type: "spring",
                             damping: 30,
-                            stiffness: 200,
-                            mass: 0.8
+                            stiffness: 400,
+                            mass: 0.5
                         }}
                     >
                         <button className={styles.closeButton} onClick={onClose}>
@@ -32,9 +32,18 @@ export function ProjectModal({ project, isMobile, onClose, onExitComplete }: Pro
                             className={styles.modalImageHeader}
                             style={{ borderBottom: `2px solid ${project.color}` }}
                         >
-                            <div className={styles.imagePlaceholder} style={{ color: project.color, fontSize: "5rem" }}>
-                                0{project.id}
-                            </div>
+                            {project.image ? (
+                                // eslint-disable-next-line @next/next/no-img-element
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className={styles.modalImage}
+                                />
+                            ) : (
+                                <div className={styles.imagePlaceholder} style={{ color: project.color, fontSize: "5rem" }}>
+                                    0{project.id}
+                                </div>
+                            )}
                         </div>
                         <div className={styles.modalContent}>
                             <h3 className={styles.modalTitle}>{project.title}</h3>

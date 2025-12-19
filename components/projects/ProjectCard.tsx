@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { ProjectCardProps } from "@/types/projects";
@@ -22,7 +23,7 @@ export function ProjectCard({ project, clickedId, isMobile, onCardClick, onExitC
                         className={styles.projectCard}
                         whileHover={{ y: -5, borderColor: project.color }}
                         transition={{ duration: 0.2 }}
-                        initial={isMobile ? { opacity: 0 } : { y: -500, opacity: 0 }}
+                        initial={isMobile ? { opacity: 0 } : { y: -100, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         exit={isMobile ? {
                             opacity: 0,
@@ -38,9 +39,19 @@ export function ProjectCard({ project, clickedId, isMobile, onCardClick, onExitC
                             className={styles.imageContainer}
                             style={{ borderBottom: `2px solid ${project.color}` }}
                         >
-                            <div className={styles.imagePlaceholder} style={{ color: project.color }}>
-                                0{project.id}
-                            </div>
+                            {project.image ? (
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    className={styles.projectImage}
+                                    width={500}
+                                    height={500}
+                                />
+                            ) : (
+                                <div className={styles.imagePlaceholder} style={{ color: project.color }}>
+                                    0{project.id}
+                                </div>
+                            )}
                             <div className={styles.cardHoverOverlay}>
                                 <ArrowUpRight size={32} />
                             </div>

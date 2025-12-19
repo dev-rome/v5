@@ -3,29 +3,42 @@ import { Project } from "@/types/projects";
 export const PROJECTS: Project[] = [
     {
         id: 1,
-        title: "Neon Nexus",
-        shortDesc: "A cyberpunk-inspired dashboard for visualizing real-time crypto assets.",
-        description: "Neon Nexus is a high-performance dashboard designed for traders who value aesthetics as much as data. Built with Next.js and D3.js, it visualizes real-time market data using intricate, glowing charts. The interface is fully responsive and features a custom-built theming engine.",
-        tech: ["Next.js", "TypeScript", "D3.js", "Tailwind"],
-        links: { demo: "#", repo: "#" },
-        color: "#00ff9d"
+        title: "Recipe Finder",
+        shortDesc: "A smart culinary companion that bridges the gap between your pantry and your next meal.",
+        description: "A recipe finder app that allows you to search for recipes by name, ingredients, or filter prep time and cooking time. I utilized dynamic Next.js routing and focused heavily on optimizing page performance and speed.",
+        tech: ["Next.js", "Tailwind", "TypeScript", "Storybook"],
+        links: { demo: "https://fm-recipe-finder.vercel.app/", repo: "https://github.com/dev-rome/FM-Recipe-Finder" },
+        color: "#ff6b6b",
+        image: "/images/recipe-finder.png"
     },
     {
         id: 2,
-        title: "Void Commerce",
-        shortDesc: "Headless e-commerce starter kit with a brutalist design system.",
-        description: "An experimental e-commerce frontend built on top of Shopify's Storefront API. It abandons traditional e-commerce layouts for a brutalist, typography-centric design. Features include view transitions, optimistic UI updates, and a completely custom cart implementation.",
-        tech: ["React", "Shopify API", "Framer Motion", "Zustand"],
-        links: { demo: "#", repo: "#" },
-        color: "#bd00ff"
+        title: "Weather App",
+        shortDesc: "A purpose-built meteorological dashboard designed for clarity and immediacy.",
+        description: "A weather app that allows you to search for weather by city name, view 7 day forecast, current weather conditions, and hourly forecast. The application was built with a strong emphasis on speed and performance.",
+        tech: ["Next.js", "Weather API", "Tailwind", "TypeScript", "Shadcn"],
+        links: { demo: "https://fm-weather-app-cyan.vercel.app/", repo: "https://github.com/dev-rome/FM-Weather-App" },
+        color: "#4cc9f0",
+        image: "/images/weather-app.png"
     },
     {
         id: 3,
-        title: "Synth AI",
-        shortDesc: "Generative art platform powered by stable diffusion models.",
-        description: "Synth AI allows users to generate, remix, and mint unique digital artworks. The platform integrates with multiple AI models to offer a wide range of styles. It features a node-based editor for combining different generation parameters.",
-        tech: ["Vue.js", "Python", "WebSockets", "Three.js"],
-        links: { repo: "#" },
-        color: "#00d8ff"
+        title: "Timber and Hatchet",
+        shortDesc: "A high-performance recruitment platform connecting US enterprises with elite nearshore talent.",
+        description: "A company leveraging Astro, React, and Tailwind CSS to hire nearshore engineers.",
+        tech: ["Astro", "React", "Tailwind CSS", "JavaScript"],
+        links: { demo: "https://astro-website-v1.netlify.app/", repo: "https://github.com/dev-rome/Website-Project-v1" },
+        color: "#a8dadc",
+        image: "/images/timber-and-hatchet.png"
+    },
+    {
+        id: 4,
+        title: "Dictionary Web App",
+        shortDesc: "A pure linguistics tool prioritizing focus, typography, and speed.",
+        description: "A web app integrating the Free Dictionary API to provide quick and reliable word definitions.",
+        tech: ["HTML", "CSS", "JavaScript", "Dictionary API"],
+        links: { demo: "https://inquisitive-biscochitos-13dfd2.netlify.app/", repo: "https://github.com/dev-rome/Dictionary-Web-App" },
+        color: "#fca311",
+        image: "/images/dictionary-app.png"
     }
 ];

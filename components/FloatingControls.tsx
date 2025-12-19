@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { FileDown, Mail } from "lucide-react";
-import { ContactModal } from "./ContactModal";
+import { ContactModal } from "./Contact/ContactModal";
 import styles from "./FloatingControls.module.css";
 
 export function FloatingControls() {

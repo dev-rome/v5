@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
-import { MethodologyCard } from "../../components/methodology/MethodologyCard";
+import { MethodologyCard } from "../../components/Methodology/MethodologyCard";
 import { METHODS } from "@/data/methodology";
 import styles from "./Methodology.module.css";
 

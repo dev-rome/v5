@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ProfileCard } from "../../components/about/ProfileCard";
-import { SkillsGrid } from "../../components/about/SkillsGrid";
-import { BioTerminal } from "../../components/about/BioTerminal";
-import { MissionLog } from "../../components/about/MissionLog";
+import { ProfileCard } from "../../components/About/ProfileCard";
+import { SkillsGrid } from "../../components/About/SkillsGrid";
+import { BioTerminal } from "../../components/About/BioTerminal";
+import { MissionLog } from "../../components/About/MissionLog";
 import styles from "./About.module.css";
 
 export function About() {

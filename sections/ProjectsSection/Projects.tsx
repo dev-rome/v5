@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ProjectHeader } from "@/components/projects/ProjectHeader";
-import { ProjectCard } from "@/components/projects/ProjectCard";
-import { ProjectModal } from "@/components/projects/ProjectModal";
+import { ProjectHeader } from "@/components/Projects/ProjectHeader";
+import { ProjectCard } from "@/components/Projects/ProjectCard";
+import { ProjectModal } from "@/components/Projects/ProjectModal";
 import { Project } from "@/types/projects";
 import { PROJECTS } from "@/data/projects";
 import styles from "./Projects.module.css";

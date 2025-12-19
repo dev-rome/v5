@@ -1,0 +1,127 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-left: 0.25rem;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    transition: all 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1px var(--primary);
+}
+
+.inputError {
+    border-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.inputError:focus {
+    box-shadow: 0 0 0 1px #ef4444;
+}
+
+.errorMessage {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    margin-left: 0.25rem;
+    font-weight: 500;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #525252;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 8rem;
+}
+
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary);
+    color: var(--black);
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.submitButton:hover:not(:disabled) {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 1rem rgba(0, 255, 157, 0.3);
+}
+
+.submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.successWrapper {
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.successIcon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 157, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.successTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.successMessage {
+    color: #a3a3a3;
+}

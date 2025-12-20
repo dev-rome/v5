@@ -53,10 +53,10 @@ export default async function Image() {
                             alignItems: 'center',
                             justifyContent: 'center',
                             color: '#fff',
-                            fontSize: '60px',
+                            fontSize: '50px',
                             fontWeight: 'bold'
                         }}>
-                            DR
+                            JH
                         </div>
                     </div>
                 </div>
@@ -84,15 +84,6 @@ export default async function Image() {
                     }}
                 >
                     Frontend Engineer
-                </div>
-                <div style={{
-                    position: 'absolute',
-                    bottom: '30px',
-                    display: 'flex',
-                    fontSize: '20px',
-                    color: '#444'
-                }}>
-                    jeromehaynes.com
                 </div>
             </div>
         ),

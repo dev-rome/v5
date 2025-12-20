@@ -27,13 +27,13 @@ export async function POST(req: Request) {
         });
 
         const mailOptions = {
-            from: process.env.SMTP_FROM || '"Portfolio Contact" <no-reply@example.com>',
+            from: `"${name} - ${email} (via Portfolio)" <${process.env.SMTP_USER}>`,
             to: process.env.SMTP_USER,
             replyTo: email,
             subject: subject || `New Contact Form Submission from ${name}`,
             text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage:\n${message}`,
             html: `
-            <div style="font-family: Arial, sans-serif; color: #333;">
+            <div style="font-family: Arial, sans-serif; color: #000;">
                 <h2>New Contact Form Submission</h2>
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>

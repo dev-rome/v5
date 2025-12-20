@@ -21,6 +21,20 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Jerome Haynes | Frontend Engineer",
   description: "Frontend Developer Portfolio. Creating impactful user experiences.",
+  metadataBase: new URL("https://jeromehaynes.com"),
+  openGraph: {
+    title: "Jerome Haynes | Frontend Engineer",
+    description: "Frontend Engineer Portfolio. Creating impactful user experiences.",
+    url: "https://jeromehaynes.com",
+    siteName: "Jerome Haynes Porfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jerome Haynes | Frontend Engineer",
+    description: "Frontend Engineer Portfolio. Creating impactful user experiences.",
+  }
 };
 
 export default function RootLayout({

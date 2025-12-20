@@ -19,8 +19,7 @@ export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
         reset,
         formState: { errors, isSubmitting }
     } = useForm<ContactFormData>({
-        resolver: zodResolver(contactSchema),
-        mode: "onBlur"
+        resolver: zodResolver(contactSchema)
     });
 
     const onSubmit = async (data: ContactFormData) => {

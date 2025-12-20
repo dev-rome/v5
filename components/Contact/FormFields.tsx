@@ -11,6 +11,7 @@ export function FormInput<T extends FieldValues>({ id, label, type = "text", pla
             <label htmlFor={id} className={styles.label}>{label}</label>
             <div className="relative">
                 <motion.input
+                    key={error?.message}
                     type={type}
                     id={id}
                     {...register(id)}
@@ -42,6 +43,7 @@ export function FormTextarea<T extends FieldValues>({ id, label, placeholder, re
             <label htmlFor={id} className={styles.label}>{label}</label>
             <div className="relative">
                 <motion.textarea
+                    key={error?.message}
                     id={id}
                     {...register(id)}
                     className={`${styles.textarea} ${error ? styles.inputError : ""} ${className || ""}`}

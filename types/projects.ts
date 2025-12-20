@@ -16,7 +16,7 @@ export interface ProjectModalProps {
     project: Project | null;
     isMobile: boolean;
     onClose: () => void;
-    onExitComplete: () => void;
+    onExitComplete?: () => void;
 }
 
 export interface ProjectCardProps {

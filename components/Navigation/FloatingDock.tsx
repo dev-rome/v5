@@ -8,24 +8,6 @@ import styles from "./FloatingDock.module.css";
 
 export function FloatingDock() {
     const [activeSection, setActiveSection] = useState<string>("hero");
-    const [isContactOpen, setIsContactOpen] = useState(false);
-    const [isLocked, setIsLocked] = useState(false);
-
-    useEffect(() => {
-        const checkLock = () => {
-            setIsLocked(document.body.style.overflow === "hidden");
-        };
-
-        checkLock();
-
-        const observer = new MutationObserver(checkLock);
-        observer.observe(document.body, {
-            attributes: true,
-            attributeFilter: ["style"]
-        });
-
-        return () => observer.disconnect();
-    }, []);
 
     useEffect(() => {
         let ticking = false;
@@ -74,11 +56,6 @@ export function FloatingDock() {
     return (
         <nav
             className={styles.dockContainer}
-            style={{
-                pointerEvents: isLocked || isContactOpen ? "none" : "auto",
-                opacity: isContactOpen ? 0 : 1,
-                visibility: isContactOpen ? "hidden" : "visible"
-            }}
             role="navigation"
         >
             <div className={styles.dockContent}>
@@ -104,7 +81,7 @@ export function FloatingDock() {
                     </button>
                 ))}
                 <div className={styles.separator} />
-                <DockActions isContactOpen={isContactOpen} onContactOpenChange={setIsContactOpen} />
+                <DockActions />
             </div>
         </nav>
     );

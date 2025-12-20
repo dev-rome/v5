@@ -1,12 +1,13 @@
 "use client";
 
 import { FileDown, Mail } from "lucide-react";
-import { ContactModal } from "../Contact/ContactModal";
-import { DockActionsProps } from "@/types/navigation";
 import styles from "./DockActions.module.css";
 
+export function DockActions() {
+    const scrollToContact = () => {
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    };
 
-export function DockActions({ isContactOpen, onContactOpenChange }: DockActionsProps) {
     return (
         <>
             <a
@@ -20,14 +21,13 @@ export function DockActions({ isContactOpen, onContactOpenChange }: DockActionsP
             </a>
             <button
                 type="button"
-                onClick={() => onContactOpenChange(true)}
+                onClick={scrollToContact}
                 className={styles.dockItem}
                 aria-label="Contact Me"
             >
                 <Mail size={20} />
                 <span className={styles.tooltip}>Contact</span>
             </button>
-            <ContactModal isOpen={isContactOpen} onClose={() => onContactOpenChange(false)} />
         </>
     );
 }

@@ -27,8 +27,3 @@ export interface FormTextareaProps<T extends FieldValues> {
     error?: FieldError;
     className?: string;
 }
-
-export interface ContactModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-}

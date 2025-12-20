@@ -12,7 +12,7 @@ export function ProjectHeader() {
             className={styles.headerWrapper}
         >
             <h2 className={styles.sectionTitle}>PROJECTS</h2>
-            <span className={styles.subtitle}>QUEST_LOG</span>
+            <span className={styles.subtitle}>// QUEST_LOG</span>
         </motion.div>
     );
 }

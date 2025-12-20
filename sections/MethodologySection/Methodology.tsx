@@ -21,7 +21,7 @@ export function Methodology() {
                     <h2 className={styles.sectionTitle}>
                         METHODOLOGY
                     </h2>
-                    <span className={styles.subtitle}>OPERATING_PROTOCOLS</span>
+                    <span className={styles.subtitle}>// OPERATING_PROTOCOLS</span>
                 </motion.div>
                 <div className={styles.grid}>
                     {METHODS.map((method, index) => (

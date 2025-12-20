@@ -9,6 +9,23 @@ import styles from "./FloatingDock.module.css";
 export function FloatingDock() {
     const [activeSection, setActiveSection] = useState<string>("hero");
     const [isOpen, setIsOpen] = useState(false);
+    const [isLocked, setIsLocked] = useState(false);
+
+    useEffect(() => {
+        const checkLock = () => {
+            setIsLocked(document.body.style.overflow === "hidden");
+        };
+
+        checkLock();
+
+        const observer = new MutationObserver(checkLock);
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["style"]
+        });
+
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         let ticking = false;
@@ -20,7 +37,7 @@ export function FloatingDock() {
                 window.requestAnimationFrame(() => {
                     const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-                    let newActive = activeSection;
+                    let newActive: string | null = null;
 
                     for (const item of NAV_ITEMS) {
                         const element = document.getElementById(item.id);
@@ -33,7 +50,9 @@ export function FloatingDock() {
                         }
                     }
 
-                    setActiveSection(newActive);
+                    if (newActive) {
+                        setActiveSection(newActive);
+                    }
                     ticking = false;
                 });
                 ticking = true;
@@ -43,7 +62,7 @@ export function FloatingDock() {
         handleScroll();
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [activeSection]);
+    }, []);
 
     const scrollTo = (id: string) => {
         const element = document.getElementById(id);
@@ -58,6 +77,7 @@ export function FloatingDock() {
             className={styles.dockContainer}
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
+            style={{ pointerEvents: isLocked ? "none" : "auto" }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             role="navigation"
         >

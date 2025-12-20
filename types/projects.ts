@@ -12,12 +12,6 @@ export interface Project {
     image?: string;
 }
 
-export interface ProjectModalProps {
-    project: Project | null;
-    onClose: () => void;
-}
-
 export interface ProjectCardProps {
     project: Project;
-    onCardClick: (id: number) => void;
 }

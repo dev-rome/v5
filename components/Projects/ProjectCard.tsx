@@ -1,15 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 import { ProjectCardProps } from "@/types/projects";
 import styles from "./ProjectCard.module.css";
 
-export function ProjectCard({ project, onCardClick }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
     return (
         <div className={styles.projectCardWrapper}>
             <div
-                onClick={() => onCardClick(project.id)}
                 className={styles.projectCard}
                 data-id={project.id}
             >

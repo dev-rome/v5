@@ -11,7 +11,3 @@ export interface Project {
     color: string;
     image?: string;
 }
-
-export interface ProjectCardProps {
-    project: Project;
-}

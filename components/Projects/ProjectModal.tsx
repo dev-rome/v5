@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { X, ExternalLink, Github } from "lucide-react";
-import { ProjectModalProps } from "@/types/projects";
+import { Project } from "@/types/projects";
 import styles from "./ProjectModal.module.css";
 
-export function ProjectModal({ project, onClose }: ProjectModalProps) {
+export function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
     if (!project) return null;
 
     return (

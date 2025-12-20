@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
-import { ProjectCardProps } from "@/types/projects";
+import { Project } from "@/types/projects";
 import styles from "./ProjectCard.module.css";
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project }: { project: Project }) {
     return (
         <div className={styles.projectCardWrapper}>
             <div

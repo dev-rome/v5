@@ -8,12 +8,19 @@
 
 .modalContainer {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
     z-index: 1000;
     padding: 1rem;
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
     pointer-events: none;
     overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modalContent {

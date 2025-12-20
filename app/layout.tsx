@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+import { FloatingDock } from "@/components/Navigation/FloatingDock";
 import styles from "./Layout.module.css";
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${jetbrainsMono.variable}`}>
       <body className={styles.body}>
         <div className={styles.scanline} />
+        <FloatingDock />
         {children}
       </body>
     </html>

@@ -1,0 +1,162 @@
+.dockContainer {
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.dockContent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: hidden;
+}
+
+.dockItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.dockItem:hover {
+    color: var(--white);
+    background: var(--glass-bg);
+}
+
+.dockItemActive {
+    color: var(--primary);
+    background: rgba(0, 255, 157, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+.toggleButton {
+    z-index: 101;
+}
+
+.toggleButtonActive {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.hiddenIcon {
+    display: none;
+}
+
+.menuLabel {
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+}
+
+.tooltip {
+    position: absolute;
+    padding: 0.5rem 0.75rem;
+    background: var(--black);
+    border: 1px solid var(--glass-border);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-family: var(--font-heading);
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.dockItem:hover .tooltip {
+    opacity: 1;
+}
+
+@media (max-width: 64rem) {
+    .dockContainer {
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: fit-content;
+        max-width: 90vw;
+    }
+
+    .dockContent {
+        flex-direction: row;
+        gap: 0.25rem;
+        margin-left: 0.5rem;
+    }
+
+    .dockItem {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .separator {
+        width: 1px;
+        height: 1.5rem;
+        background: var(--glass-border);
+        margin: 0 0.25rem;
+    }
+
+    .tooltip {
+        display: none;
+    }
+}
+
+@media (min-width: 64rem) {
+    .dockContainer {
+        top: 0;
+        bottom: 0;
+        margin-block: auto;
+        left: 2rem;
+        right: auto;
+        height: fit-content;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .dockContent {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
+    .dockItem {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .separator {
+        width: 2rem;
+        height: 1px;
+        background: var(--glass-border);
+        margin: 0.25rem 0;
+    }
+
+    .tooltip {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%) translateX(10px);
+        margin-left: 0.5rem;
+    }
+
+    .dockItem:hover .tooltip {
+        transform: translateY(-50%) translateX(0);
+    }
+}

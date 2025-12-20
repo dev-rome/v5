@@ -8,7 +8,7 @@ import styles from "./Hero.module.css";
 
 export function Hero() {
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} id="hero">
       <ParticleBackground />
       <div className={styles.contentContainer}>
         <div className={styles.avatarWrapper}>

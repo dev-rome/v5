@@ -10,7 +10,7 @@ export function Methodology() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} id="methodology">
             <div className={styles.container}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

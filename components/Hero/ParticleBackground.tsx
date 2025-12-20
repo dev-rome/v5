@@ -8,9 +8,16 @@ import styles from "./ParticleBackground.module.css";
 
 export function ParticleBackground() {
   const [stars, setStars] = useState<Star[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Generate random stars on client-side to prevent hydration mismatch
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 64rem)").matches);
+    };
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
     const newStars: Star[] = Array.from({ length: 50 }).map(() => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -18,6 +25,8 @@ export function ParticleBackground() {
       delay: Math.random() * 5,
     }));
     setStars(newStars);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
@@ -69,8 +78,9 @@ export function ParticleBackground() {
             top: `${star.y}%`,
             width: star.size,
             height: star.size,
+            opacity: isMobile ? 0.6 : undefined,
           }}
-          animate={{
+          animate={isMobile ? undefined : {
             opacity: [0.2, 1, 0.2],
             scale: [1, 1.2, 1],
           }}
@@ -82,82 +92,86 @@ export function ParticleBackground() {
           }}
         />
       ))}
-      {/* 4. Moving Clouds (Fog Layers) */}
-      <motion.div
-        className={styles.clouds}
-        animate={{ x: ["-10%", "10%", "-10%"] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-      />
-      {/* 5. Shooting Stars (Star Shape + Tail) */}
-      <motion.div
-        className={`${styles.shootingStarContainer} ${styles.shootingStar1}`}
-        initial={{ opacity: 0 }}
-        animate={{
-          x: [-50, -600],
-          y: [0, 600],
-          opacity: [0, 1, 0]
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatDelay: 5,
-          ease: "easeIn"
-        }}
-      >
-        <div className={styles.starTrail}>
-          <div className={`${styles.trailLine} ${styles.whiteTrail}`} />
-          {/* Star Shape Head */}
-          <svg viewBox="0 0 24 24" fill="currentColor" className={styles.starHead}>
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-        </div>
-      </motion.div>
-      <motion.div
-        className={`${styles.shootingStarContainer} ${styles.shootingStar2}`}
-        initial={{ opacity: 0 }}
-        animate={{
-          x: [-50, -800],
-          y: [0, 800],
-          opacity: [0, 1, 0]
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          repeatDelay: 8,
-          delay: 2,
-          ease: "easeOut"
-        }}
-      >
-        <div className={styles.starTrail}>
-          <div className={`${styles.trailLine} ${styles.cyanTrail}`} />
-          <svg viewBox="0 0 24 24" fill="currentColor" className={styles.cyanHead}>
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-        </div>
-      </motion.div>
-      <motion.div
-        className={`${styles.shootingStarContainer} ${styles.shootingStar3}`}
-        initial={{ opacity: 0 }}
-        animate={{
-          x: [-20, -400],
-          y: [0, 400],
-          opacity: [0, 1, 0]
-        }}
-        transition={{
-          duration: 1.2,
-          repeat: Infinity,
-          repeatDelay: 12,
-          delay: 5,
-          ease: "easeIn"
-        }}
-      >
-        <div className={styles.starTrail}>
-          <div className={`${styles.trailLine} ${styles.purpleTrail}`} />
-          <svg viewBox="0 0 24 24" fill="currentColor" className={styles.purpleHead}>
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-        </div>
-      </motion.div>
+      {!isMobile && (
+        <motion.div
+          className={styles.clouds}
+          animate={{ x: ["-10%", "10%", "-10%"] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+      )}
+      {!isMobile && (
+        <>
+          <motion.div
+            className={`${styles.shootingStarContainer} ${styles.shootingStar1}`}
+            initial={{ opacity: 0 }}
+            animate={{
+              x: [-50, -600],
+              y: [0, 600],
+              opacity: [0, 1, 0]
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatDelay: 5,
+              ease: "easeIn"
+            }}
+          >
+            <div className={styles.starTrail}>
+              <div className={`${styles.trailLine} ${styles.whiteTrail}`} />
+              {/* Star Shape Head */}
+              <svg viewBox="0 0 24 24" fill="currentColor" className={styles.starHead}>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </motion.div>
+          <motion.div
+            className={`${styles.shootingStarContainer} ${styles.shootingStar2}`}
+            initial={{ opacity: 0 }}
+            animate={{
+              x: [-50, -800],
+              y: [0, 800],
+              opacity: [0, 1, 0]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatDelay: 8,
+              delay: 2,
+              ease: "easeOut"
+            }}
+          >
+            <div className={styles.starTrail}>
+              <div className={`${styles.trailLine} ${styles.cyanTrail}`} />
+              <svg viewBox="0 0 24 24" fill="currentColor" className={styles.cyanHead}>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </motion.div>
+          <motion.div
+            className={`${styles.shootingStarContainer} ${styles.shootingStar3}`}
+            initial={{ opacity: 0 }}
+            animate={{
+              x: [-20, -400],
+              y: [0, 400],
+              opacity: [0, 1, 0]
+            }}
+            transition={{
+              duration: 1.2,
+              repeat: Infinity,
+              repeatDelay: 12,
+              delay: 5,
+              ease: "easeIn"
+            }}
+          >
+            <div className={styles.starTrail}>
+              <div className={`${styles.trailLine} ${styles.purpleTrail}`} />
+              <svg viewBox="0 0 24 24" fill="currentColor" className={styles.purpleHead}>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </motion.div>
+        </>
+      )}
     </div>
   );
 }

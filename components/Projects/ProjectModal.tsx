@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ExternalLink, Github } from "lucide-react";
 import { ProjectModalProps } from "@/types/projects";
@@ -21,6 +22,7 @@ export function ProjectModal({ project, isMobile, onClose, onExitComplete }: Pro
                 >
                     <motion.div
                         className={styles.modalCard}
+                        style={{ borderColor: project.color }}
                         onClick={(e) => e.stopPropagation()}
                         initial={isMobile ? { opacity: 0, scale: 0.95 } : { y: -1000, opacity: 0 }}
                         animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -44,8 +46,7 @@ export function ProjectModal({ project, isMobile, onClose, onExitComplete }: Pro
                             style={{ borderBottom: `2px solid ${project.color}` }}
                         >
                             {project.image ? (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.title}
                                     className={styles.modalImage}

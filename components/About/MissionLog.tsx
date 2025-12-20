@@ -1,17 +1,10 @@
-"use client";
-
-import { motion } from "motion/react";
 import { History } from "lucide-react";
 import { MISSION_LOG } from "@/data/about";
 import styles from "./AboutComponents.module.css";
 
 export function MissionLog() {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+        <div
             className={styles.missionCard}
         >
             <h3 className={styles.missionHeader}>
@@ -47,6 +40,6 @@ export function MissionLog() {
                     </div>
                 ))}
             </div>
-        </motion.div>
+        </div>
     );
 }

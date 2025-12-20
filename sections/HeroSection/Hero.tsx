@@ -25,9 +25,6 @@ export function Hero() {
         </motion.p>
       </div>
       <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
         className={styles.scrollButton}
         onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
         aria-label="Scroll to About section"

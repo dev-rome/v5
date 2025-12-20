@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
 import { ContactForm } from "@/components/Contact/ContactForm";
 import { ContactInfo } from "@/components/Contact/ContactInfo";
 import styles from "./Contact.module.css";
@@ -11,39 +8,28 @@ export function Contact() {
     return (
         <section className={styles.sectionContainer} id="contact" aria-label="Contact">
             <div className={styles.maxContainer}>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                <div
                     className={styles.headerWrapper}
                 >
                     <h2 className={styles.sectionTitle}>CONTACT</h2>
                     <span className={styles.subtitle}>// TRANSMISSION</span>
-                </motion.div>
+                </div>
 
                 <div className={styles.contentGrid}>
                     <ContactInfo />
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
+                    <div
                         className={styles.formCard}
                     >
                         <div className={styles.bgPulse} />
 
                         <ContactForm />
-                    </motion.div>
+                    </div>
                 </div>
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6 }}
+                <div
                     className={styles.footerCopyright}
                 >
                     <p>© {currentYear} Jerome Haynes. All systems nominal.</p>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

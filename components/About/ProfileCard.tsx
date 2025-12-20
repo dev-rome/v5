@@ -1,15 +1,9 @@
-"use client";
-
-import { motion } from "motion/react";
 import { User } from "lucide-react";
 import styles from "./AboutComponents.module.css";
 
 export function ProfileCard() {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+        <div
             className={styles.profileCard}
         >
             <div className={styles.profileGradient} />
@@ -32,6 +26,6 @@ export function ProfileCard() {
                     <p className={styles.infoValue}>Frontend Engineer</p>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }

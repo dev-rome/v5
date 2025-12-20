@@ -11,13 +11,9 @@ export function HeroAvatar() {
       aria-label="Interactive character avatar: A hacker in a hoodie. Hover to reveal hobbies and interests."
     >
       <motion.div
-        animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.8, 0.5] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className={styles.bgPulse}
       />
       <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className={styles.characterContainer}
       >
         <svg viewBox="0 0 400 400" className="w-full h-full">
@@ -108,8 +104,6 @@ export function HeroAvatar() {
               height="400"
               fill="url(#scanlinePattern)"
               mask="url(#characterMask)"
-              animate={{ y: [0, 4] }}
-              transition={{ duration: 0.2, repeat: Infinity, ease: "linear" }}
             />
           </g>
         </svg>

@@ -1,13 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { FileDown, Mail } from "lucide-react";
 import { ContactModal } from "../Contact/ContactModal";
+import { DockActionsProps } from "@/types/navigation";
 import styles from "./DockActions.module.css";
 
-export function DockActions() {
-    const [isContactOpen, setIsContactOpen] = useState(false);
 
+export function DockActions({ isContactOpen, onContactOpenChange }: DockActionsProps) {
     return (
         <>
             <a
@@ -21,14 +20,14 @@ export function DockActions() {
             </a>
             <button
                 type="button"
-                onClick={() => setIsContactOpen(true)}
+                onClick={() => onContactOpenChange(true)}
                 className={styles.dockItem}
                 aria-label="Contact Me"
             >
                 <Mail size={20} />
                 <span className={styles.tooltip}>Contact</span>
             </button>
-            <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+            <ContactModal isOpen={isContactOpen} onClose={() => onContactOpenChange(false)} />
         </>
     );
 }

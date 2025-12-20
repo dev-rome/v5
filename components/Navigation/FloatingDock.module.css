@@ -1,5 +1,8 @@
 .dockContainer {
     position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -11,13 +14,13 @@
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
     transition: background-color 0.3s ease, border-color 0.3s ease;
     padding: 0.5rem;
+    width: fit-content;
 }
 
 .dockContent {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    overflow: hidden;
 }
 
 .dockItem {
@@ -31,6 +34,8 @@
     cursor: pointer;
     text-decoration: none;
     border: 1px solid transparent;
+    width: 3rem;
+    height: 3rem;
 }
 
 .dockItem:hover {
@@ -43,26 +48,6 @@
     background: rgba(0, 255, 157, 0.1);
     box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
     border-color: rgba(0, 255, 157, 0.3);
-}
-
-.toggleButton {
-    z-index: 101;
-}
-
-.toggleButtonActive {
-    color: var(--primary);
-    border-color: var(--primary);
-}
-
-.hiddenIcon {
-    display: none;
-}
-
-.menuLabel {
-    font-size: 0.65rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
-    letter-spacing: 0.05em;
 }
 
 .tooltip {
@@ -78,28 +63,32 @@
     opacity: 0;
     pointer-events: none;
     transition: all 0.2s ease;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(10px);
+    margin-top: 0.5rem;
 }
 
 .dockItem:hover .tooltip {
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.separator {
+    width: 1px;
+    height: 1.5rem;
+    background: var(--glass-border);
+    margin: 0 0.5rem;
 }
 
 @media (max-width: 47.9375rem) {
     .dockContainer {
-        bottom: 1.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        left: 0;
-        right: 0;
-        margin-inline: auto;
-        width: fit-content;
-        max-width: 90vw;
+        top: 1rem;
+        padding: 0.25rem;
     }
 
     .dockContent {
-        flex-direction: row;
         gap: 0.25rem;
-        margin-left: 0.5rem;
     }
 
     .dockItem {
@@ -108,63 +97,10 @@
     }
 
     .separator {
-        width: 1px;
-        height: 1.5rem;
-        background: var(--glass-border);
         margin: 0 0.25rem;
     }
 
     .tooltip {
         display: none;
-    }
-}
-
-@media (min-width: 48rem) {
-    .dockContainer {
-        top: 2rem;
-        bottom: auto;
-        left: 2rem;
-        right: auto;
-        transform: none;
-        height: fit-content;
-        width: fit-content;
-        flex-direction: row;
-        gap: 0;
-        margin-block: 0;
-        padding: 0.5rem;
-    }
-
-    .dockContent {
-        flex-direction: row;
-        width: auto;
-        height: auto;
-        margin-top: 0;
-        gap: 0.5rem;
-    }
-
-    .dockItem {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    .separator {
-        width: 1px;
-        height: 1.5rem;
-        background: var(--glass-border);
-        margin: 0 0.5rem;
-    }
-
-    .tooltip {
-        left: 50%;
-        right: auto;
-        top: 100%;
-        bottom: auto;
-        transform: translateX(-50%) translateY(10px);
-        margin-left: 0;
-        margin-top: 0.5rem;
-    }
-
-    .dockItem:hover .tooltip {
-        transform: translateX(-50%) translateY(0);
     }
 }

@@ -1,16 +1,9 @@
-"use client";
-
-import { motion } from "motion/react";
 import { Github, Linkedin } from "lucide-react";
 import styles from "./ContactInfo.module.css";
 
 export function ContactInfo() {
     return (
-        <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+        <div
             className={styles.infoColumn}
         >
             <div className={styles.infoCard}>
@@ -26,6 +19,6 @@ export function ContactInfo() {
                     </a>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 }

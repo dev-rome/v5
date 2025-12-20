@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { NAV_ITEMS } from "@/constants/navigation";
 import { DockActions } from "./DockActions";
 import styles from "./FloatingDock.module.css";
 
 export function FloatingDock() {
     const [activeSection, setActiveSection] = useState<string>("hero");
-    const [isOpen, setIsOpen] = useState(false);
+    const [isContactOpen, setIsContactOpen] = useState(false);
     const [isLocked, setIsLocked] = useState(false);
 
     useEffect(() => {
@@ -68,63 +68,44 @@ export function FloatingDock() {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: "smooth", block: "start" });
-            setIsOpen(false);
         }
     };
 
     return (
-        <motion.div
+        <nav
             className={styles.dockContainer}
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            style={{ pointerEvents: isLocked ? "none" : "auto" }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            style={{
+                pointerEvents: isLocked || isContactOpen ? "none" : "auto",
+                opacity: isContactOpen ? 0 : 1,
+                visibility: isContactOpen ? "hidden" : "visible"
+            }}
             role="navigation"
         >
-            <button
-                type="button"
-                onClick={() => setIsOpen(!isOpen)}
-                className={`${styles.dockItem} ${styles.toggleButton} ${isOpen ? styles.toggleButtonActive : ''}`}
-                aria-label={isOpen ? "Close Menu" : "Open Menu"}
-            >
-                <span className={styles.menuLabel}>{isOpen ? "CLOSE" : "MENU"}</span>
-            </button>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        className={styles.dockContent}
-                        initial={{ opacity: 0, width: 0, height: 0 }}
-                        animate={{ opacity: 1, width: "auto", height: "auto" }}
-                        exit={{ opacity: 0, width: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
+            <div className={styles.dockContent}>
+                {NAV_ITEMS.map((item) => (
+                    <button
+                        key={item.label}
+                        type="button"
+                        onClick={() => scrollTo(item.id)}
+                        className={`${styles.dockItem} ${activeSection === item.id ? styles.dockItemActive : ''}`}
+                        aria-label={item.label}
+                        aria-current={activeSection === item.id ? "page" : undefined}
                     >
-                        <div className={styles.separator} />
-                        {NAV_ITEMS.map((item) => (
-                            <button
-                                key={item.label}
-                                type="button"
-                                onClick={() => scrollTo(item.id)}
-                                className={`${styles.dockItem} ${activeSection === item.id ? styles.dockItemActive : ''}`}
-                                aria-label={item.label}
-                                aria-current={activeSection === item.id ? "page" : undefined}
-                            >
-                                <item.icon size={20} />
-                                <span className={styles.tooltip}>{item.label}</span>
-                                {activeSection === item.id && (
-                                    <motion.div
-                                        layoutId="active-dock-indicator"
-                                        className="absolute inset-0 rounded-full border border-primary/50"
-                                        style={{ pointerEvents: "none" }}
-                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                    />
-                                )}
-                            </button>
-                        ))}
-                        <div className={styles.separator} />
-                        <DockActions />
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.div>
+                        <item.icon size={20} />
+                        <span className={styles.tooltip}>{item.label}</span>
+                        {activeSection === item.id && (
+                            <motion.div
+                                layoutId="active-dock-indicator"
+                                className="absolute inset-0 rounded-full border border-primary/50"
+                                style={{ pointerEvents: "none" }}
+                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            />
+                        )}
+                    </button>
+                ))}
+                <div className={styles.separator} />
+                <DockActions isContactOpen={isContactOpen} onContactOpenChange={setIsContactOpen} />
+            </div>
+        </nav>
     );
 }

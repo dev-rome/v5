@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "motion/react";
 import { ProfileCard } from "../../components/About/ProfileCard";
 import { SkillsGrid } from "../../components/About/SkillsGrid";
 import { BioTerminal } from "../../components/About/BioTerminal";
@@ -13,17 +10,14 @@ export function About() {
       <div className={styles.bgDecorRight} />
       <div className={styles.bgDecorLeft} />
       <div className={styles.maxContainer}>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+        <div
           className={styles.headerWrapper}
         >
           <h2 className={styles.sectionTitle}>
             About
           </h2>
           <span className={styles.versionTag}>v5.0.1 // CLASSIFIED</span>
-        </motion.div>
+        </div>
         <div className={styles.contentGrid}>
           <div className={styles.leftColumn}>
             <ProfileCard />

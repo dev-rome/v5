@@ -2,14 +2,9 @@
 
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { Star } from "@/types/hero";
 import styles from "./ParticleBackground.module.css";
 
-interface Star {
-  x: number;
-  y: number;
-  size: number;
-  delay: number;
-}
 
 export function ParticleBackground() {
   const [stars, setStars] = useState<Star[]>([]);

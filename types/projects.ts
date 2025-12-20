@@ -14,15 +14,10 @@ export interface Project {
 
 export interface ProjectModalProps {
     project: Project | null;
-    isMobile: boolean;
     onClose: () => void;
-    onExitComplete?: () => void;
 }
 
 export interface ProjectCardProps {
     project: Project;
-    clickedId: number | null;
-    isMobile: boolean;
     onCardClick: (id: number) => void;
-    onExitComplete: (project: Project) => void;
 }

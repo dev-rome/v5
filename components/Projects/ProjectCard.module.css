@@ -6,6 +6,22 @@
     flex-direction: column;
 }
 
+.projectCard[data-id="1"] {
+    --project-color: #ff6b6b;
+}
+
+.projectCard[data-id="2"] {
+    --project-color: #4cc9f0;
+}
+
+.projectCard[data-id="3"] {
+    --project-color: #a8dadc;
+}
+
+.projectCard[data-id="4"] {
+    --project-color: #fca311;
+}
+
 .projectCard {
     position: relative;
     overflow: hidden;
@@ -20,8 +36,8 @@
 }
 
 .projectCard:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 1.5rem rgba(0, 216, 255, 0.1);
+    border-color: var(--project-color);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
 }
 
 .imageContainer {
@@ -33,6 +49,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-bottom: 0.125rem solid var(--project-color);
 }
 
 .projectImage {
@@ -46,25 +63,9 @@
     transform: scale(1.05);
 }
 
-.cardHoverOverlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    color: white;
-}
-
-.projectCard:hover .cardHoverOverlay {
-    opacity: 1;
-}
-
 .imagePlaceholder {
     font-size: 3rem;
-    color: rgba(255, 255, 255, 0.1);
+    color: var(--project-color);
     font-weight: 900;
 }
 
@@ -107,4 +108,40 @@
     border-radius: 0.25rem;
     color: #d4d4d4;
     border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+}
+
+.cardFooter {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-top: 1rem;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.iconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-muted);
+    transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--black);
+    transform: translateY(-2px);
 }

@@ -3,18 +3,17 @@
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(0.25rem);
-    z-index: 50;
+    z-index: 999;
 }
 
 .modalContainer {
     position: fixed;
     inset: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 50;
-    padding-inline: 1rem;
+    z-index: 1000;
+    padding: 1rem;
     pointer-events: none;
+    overflow-y: auto;
 }
 
 .modalContent {
@@ -29,6 +28,7 @@
     width: 100%;
     max-width: 32rem;
     pointer-events: auto;
+    margin: auto;
 }
 
 .bgPulse {

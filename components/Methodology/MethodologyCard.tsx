@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowUpRight } from "lucide-react";
 import { MethodologyCardProps } from "@/types/methodology";
 import styles from "./MethodologyCard.module.css";

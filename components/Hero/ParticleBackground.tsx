@@ -38,6 +38,7 @@ export function ParticleBackground() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
         className={styles.moonWrapper}
+        style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
       >
         <svg viewBox="0 0 100 100" className={styles.moonSvg}>
           <defs>

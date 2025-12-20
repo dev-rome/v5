@@ -12,9 +12,11 @@ export function HeroAvatar() {
     >
       <motion.div
         className={styles.bgPulse}
+        style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
       />
       <motion.div
         className={styles.characterContainer}
+        style={{ willChange: "transform", transform: "translateZ(0)" }}
       >
         <svg viewBox="0 0 400 400" className="w-full h-full">
           <defs>

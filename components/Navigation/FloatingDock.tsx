@@ -74,7 +74,11 @@ export function FloatingDock() {
                             <motion.div
                                 layoutId="active-dock-indicator"
                                 className="absolute inset-0 rounded-full border border-primary/50"
-                                style={{ pointerEvents: "none" }}
+                                style={{
+                                    pointerEvents: "none",
+                                    transform: "translateZ(0)",
+                                    willChange: "transform"
+                                }}
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                             />
                         )}

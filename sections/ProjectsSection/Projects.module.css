@@ -1,9 +1,10 @@
-/* Section Container */
 .sectionContainer {
     width: 100%;
     padding: 6rem 1rem;
     background-color: var(--background);
     overflow: hidden;
+    position: relative;
+    z-index: 10;
 }
 
 .maxContainer {
@@ -11,7 +12,6 @@
     margin-inline: auto;
 }
 
-/* Grid */
 .projectsGrid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));

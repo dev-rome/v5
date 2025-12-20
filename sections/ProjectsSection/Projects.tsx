@@ -42,6 +42,8 @@ export function Projects() {
 
     const handleCloseModal = () => {
         setModalProject(null);
+        // Start card return animation slightly before modal finishes
+        setTimeout(() => setClickedId(null), 300);
     };
 
     return (
@@ -69,10 +71,6 @@ export function Projects() {
                 project={modalProject}
                 isMobile={isMobile}
                 onClose={handleCloseModal}
-                onExitComplete={() => {
-                    if (!isMobile) setClickedId(null);
-                    if (isMobile) setClickedId(null);
-                }}
             />
         </section>
     );

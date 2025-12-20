@@ -11,13 +11,24 @@ export function ProjectModal({ project, isMobile, onClose, onExitComplete }: Pro
             onExitComplete={onExitComplete}
         >
             {project && (
-                <div className={styles.modalOverlay} onClick={onClose}>
+                <motion.div
+                    key="modal-overlay"
+                    className={styles.modalOverlay}
+                    onClick={onClose}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
                     <motion.div
                         className={styles.modalCard}
                         onClick={(e) => e.stopPropagation()}
                         initial={isMobile ? { opacity: 0, scale: 0.95 } : { y: -1000, opacity: 0 }}
                         animate={{ y: 0, opacity: 1, scale: 1 }}
-                        exit={isMobile ? { opacity: 0, scale: 0.95 } : { y: -1000, opacity: 0 }}
+                        exit={isMobile ? { opacity: 0, scale: 0.95 } : {
+                            y: -1000,
+                            opacity: 0,
+                            transition: { duration: 0.8, ease: "easeInOut" }
+                        }}
                         transition={isMobile ? { duration: 0.2 } : {
                             type: "spring",
                             damping: 30,
@@ -73,7 +84,7 @@ export function ProjectModal({ project, isMobile, onClose, onExitComplete }: Pro
                             </div>
                         </div>
                     </motion.div>
-                </div>
+                </motion.div>
             )}
         </AnimatePresence>
     );

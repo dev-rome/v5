@@ -21,9 +21,9 @@ export function ProjectCard({ project, clickedId, isMobile, onCardClick, onExitC
                     <motion.div
                         onClick={() => onCardClick(project.id)}
                         className={styles.projectCard}
-                        whileHover={{ y: -5, borderColor: project.color }}
-                        transition={{ duration: 0.2 }}
-                        initial={isMobile ? { opacity: 0 } : { y: 20, opacity: 0 }}
+                        whileHover={{ y: -5, borderColor: project.color, transition: { duration: 0.2 } }}
+                        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                        initial={isMobile ? { opacity: 0 } : { y: -20, opacity: 0 }}
                         whileInView={isMobile ? { opacity: 1 } : { y: 0, opacity: 1 }}
                         viewport={{ once: true, margin: "-50px" }}
                         exit={isMobile ? {

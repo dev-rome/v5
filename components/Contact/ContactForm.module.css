@@ -29,7 +29,7 @@
     border: 0.0625rem solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-sm);
     color: var(--white);
-    transition: all 0.2s ease;
+    transition: var(--transition-default);
 }
 
 .input:focus,
@@ -41,17 +41,17 @@
 }
 
 .inputError {
-    border-color: #ef4444;
+    border-color: var(--color-error);
     background-color: rgba(239, 68, 68, 0.05);
 }
 
 .inputError:focus {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 1px #ef4444;
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 1px var(--color-error);
 }
 
 .errorMessage {
-    color: #ef4444;
+    color: var(--color-error);
     font-size: 0.75rem;
     margin-top: 0.25rem;
     margin-left: 0.25rem;
@@ -60,7 +60,7 @@
 
 .input::placeholder,
 .textarea::placeholder {
-    color: #525252;
+    color: var(--color-text-dim);
 }
 
 .textarea {
@@ -80,14 +80,14 @@
     border: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: var(--transition-default);
     margin-top: 1rem;
     width: 100%;
 }
 
 .submitButton:hover:not(:disabled) {
     transform: translateY(-0.125rem);
-    box-shadow: 0 0.25rem 1rem rgba(0, 255, 157, 0.3);
+    box-shadow: var(--shadow-glow-primary);
 }
 
 .submitButton:disabled {
@@ -124,5 +124,5 @@
 }
 
 .successMessage {
-    color: #a3a3a3;
+    color: var(--color-text-muted);
 }

@@ -2,6 +2,8 @@
     width: 100%;
     padding: 6rem 1rem;
     background-color: var(--background);
+    position: relative;
+    z-index: 10;
 }
 
 @media (min-width: 48rem) {
@@ -46,7 +48,7 @@
 
 .subtitle {
     font-size: 0.75rem;
-    color: #525252;
+    color: var(--color-text-dim);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding-bottom: 0.25rem;

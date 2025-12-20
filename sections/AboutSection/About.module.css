@@ -74,7 +74,7 @@
 
 .versionTag {
     font-size: 0.75rem;
-    color: #525252;
+    color: var(--color-text-dim);
     margin-bottom: 0.25rem;
 }
 

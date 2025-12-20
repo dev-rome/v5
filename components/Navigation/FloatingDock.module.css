@@ -84,7 +84,7 @@
     opacity: 1;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 47.9375rem) {
     .dockContainer {
         bottom: 1.5rem;
         left: 50%;
@@ -119,22 +119,27 @@
     }
 }
 
-@media (min-width: 64rem) {
+@media (min-width: 48rem) {
     .dockContainer {
-        top: 0;
-        bottom: 0;
-        margin-block: auto;
+        top: 2rem;
+        bottom: auto;
         left: 2rem;
         right: auto;
+        transform: none;
         height: fit-content;
-        flex-direction: column;
+        width: fit-content;
+        flex-direction: row;
         gap: 0;
+        margin-block: 0;
+        padding: 0.5rem;
     }
 
     .dockContent {
-        flex-direction: column;
-        gap: 0.75rem;
-        margin-top: 0.75rem;
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        margin-top: 0;
+        gap: 0.5rem;
     }
 
     .dockItem {
@@ -143,20 +148,23 @@
     }
 
     .separator {
-        width: 2rem;
-        height: 1px;
+        width: 1px;
+        height: 1.5rem;
         background: var(--glass-border);
-        margin: 0.25rem 0;
+        margin: 0 0.5rem;
     }
 
     .tooltip {
-        left: 100%;
-        top: 50%;
-        transform: translateY(-50%) translateX(10px);
-        margin-left: 0.5rem;
+        left: 50%;
+        right: auto;
+        top: 100%;
+        bottom: auto;
+        transform: translateX(-50%) translateY(10px);
+        margin-left: 0;
+        margin-top: 0.5rem;
     }
 
     .dockItem:hover .tooltip {
-        transform: translateY(-50%) translateX(0);
+        transform: translateX(-50%) translateY(0);
     }
 }

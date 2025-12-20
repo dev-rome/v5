@@ -50,6 +50,8 @@ export function ProjectModal({ project, isMobile, onClose, onExitComplete }: Pro
                                     src={project.image}
                                     alt={project.title}
                                     className={styles.modalImage}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 800px"
                                 />
                             ) : (
                                 <div className={styles.imagePlaceholder} style={{ color: project.color, fontSize: "5rem" }}>

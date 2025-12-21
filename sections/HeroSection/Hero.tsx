@@ -1,10 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "motion/react";
-import { ArrowDown } from "lucide-react";
-const ParticleBackground = dynamic(() => import("../../components/Hero/ParticleBackground").then(mod => mod.ParticleBackground), { ssr: false });
+import { ParticleBackground } from "../../components/Hero/ParticleBackground";
 import { HeroAvatar } from "../../components/Hero/HeroAvatar";
+import { ArrowDown } from "lucide-react";
 import styles from "./Hero.module.css";
 
 export function Hero() {

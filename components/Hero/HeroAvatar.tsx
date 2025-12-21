@@ -1,7 +1,6 @@
-"use client";
-
-import { motion } from "motion/react";
 import styles from "./HeroAvatar.module.css";
+/* Using global hero styles for the eye pulse animation to keep things consolidated */
+import heroStyles from "../../sections/HeroSection/Hero.module.css";
 
 export function HeroAvatar() {
   return (
@@ -10,11 +9,11 @@ export function HeroAvatar() {
       role="img"
       aria-label="Interactive character avatar: A hacker in a hoodie. Hover to reveal hobbies and interests."
     >
-      <motion.div
+      <div
         className={styles.bgPulse}
         style={{ willChange: "transform, opacity", transform: "translateZ(0)" }}
       />
-      <motion.div
+      <div
         className={styles.characterContainer}
         style={{ willChange: "transform", transform: "translateZ(0)" }}
       >
@@ -59,24 +58,21 @@ export function HeroAvatar() {
             />
             {/* Inner Shadow (Face Void) */}
             <ellipse cx="200" cy="190" rx="60" ry="70" fill="#000" />
-            {/* Glowing Eyes (Hidden in shadow) */}
             {/* Glowing Eyes (CSS Filter for performance) */}
             <g style={{ filter: "drop-shadow(0 0 2px #00ff9d)" }}>
-              <motion.path
+              <path
                 d="M170 190 L185 195 L170 200"
                 fill="none"
                 stroke="#00ff9d"
                 strokeWidth="2"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 4, repeat: Infinity }}
+                className={heroStyles.eyePulse}
               />
-              <motion.path
+              <path
                 d="M230 190 L215 195 L230 200"
                 fill="none"
                 stroke="#00ff9d"
                 strokeWidth="2"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 4, repeat: Infinity }}
+                className={heroStyles.eyePulse}
               />
             </g>
             {/* Tech Accents on Hoodie */}
@@ -92,8 +88,8 @@ export function HeroAvatar() {
             <rect x="155" y="390" width="10" height="15" fill="#00ff9d" rx="2" opacity="0.8" />
             <path d="M220 320 C220 350 230 380 240 390" fill="none" stroke="#444" strokeWidth="3" />
             <rect x="235" y="390" width="10" height="15" fill="#bd00ff" rx="2" opacity="0.8" />
-            {/* Scanline Overlay (Inside SVG, masked, animated via CSS/Framer) */}
-            <motion.rect
+            {/* Scanline Overlay */}
+            <rect
               x="0"
               y="0"
               width="400"
@@ -103,7 +99,7 @@ export function HeroAvatar() {
             />
           </g>
         </svg>
-      </motion.div>
+      </div>
     </div>
   );
 }

@@ -19,6 +19,7 @@
   width: 6rem;
   height: 6rem;
   z-index: 0;
+  animation: zoomIn 2s ease-out backwards;
 }
 
 @media (min-width: 48rem) {
@@ -36,7 +37,6 @@
   transform: translateZ(0);
 }
 
-/* Animations */
 @keyframes twinkle {
   0%,
   100% {

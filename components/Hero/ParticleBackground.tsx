@@ -7,30 +7,28 @@ import styles from "./ParticleBackground.module.css";
 
 
 export function ParticleBackground() {
-  const [stars, setStars] = useState<Star[]>([]);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Since we are client-only (ssr: false), we can generate stable stars once.
+  // Using useState initializer ensures it runs once on mount.
+  const [stars] = useState<Star[]>(() => Array.from({ length: 30 }).map(() => ({
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 2 + 1,
+    delay: Math.random() * 5,
+    duration: Math.random() * 3 + 2,
+  })));
+
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.matchMedia("(max-width: 64rem)").matches);
-    };
-    checkMobile();
-
-    window.addEventListener("resize", checkMobile);
-
-    const newStars: Star[] = Array.from({ length: 50 }).map(() => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 2 + 1, // 1px to 3px
-      delay: Math.random() * 5,
-    }));
-    setStars(newStars);
-
-    return () => window.removeEventListener("resize", checkMobile);
+    const handleResize = () => setIsMobile(window.matchMedia("(max-width: 64rem)").matches);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} aria-hidden="true">
       <div className={styles.nightGradient} />
       {/* 2. The Moon (Optimized) */}
       <motion.div
@@ -69,7 +67,7 @@ export function ParticleBackground() {
             width: star.size,
             height: star.size,
             opacity: isMobile ? 0.6 : undefined,
-            animationDuration: isMobile ? '0s' : `${Math.random() * 3 + 2}s`,
+            animationDuration: isMobile ? '0s' : `${star.duration}s`,
             animationDelay: `${star.delay}s`,
           }}
         />

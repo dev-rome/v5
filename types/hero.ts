@@ -3,4 +3,5 @@ export interface Star {
   y: number;
   size: number;
   delay: number;
+  duration: number;
 }

@@ -10,7 +10,7 @@ export function TestimonialCard({ testimonial, index }: TestimonialCardProps) {
             <div className={`${styles.card} ${isFeatured ? styles.featuredCard : ''}`}>
                 <Quote className={styles.quoteIcon} size={48} aria-hidden="true" />
                 <blockquote className={styles.quoteText}>
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                 </blockquote>
                 <figcaption className={styles.clientInfo}>
                     <div className={styles.avatarPlaceholder} aria-hidden="true">
@@ -18,15 +18,19 @@ export function TestimonialCard({ testimonial, index }: TestimonialCardProps) {
                     </div>
                     <div className={styles.clientDetails}>
                         <span className={styles.clientName}>{testimonial.client}</span>
-                        <div
+                        <ul
                             className={styles.rating}
                             aria-label={`Rated ${testimonial.rating || 5} out of 5 stars`}
-                            role="img"
                         >
                             {[...Array(testimonial.rating || 5)].map((_, i) => (
-                                <Star key={i} size={14} className={styles.stars} fill="currentColor" aria-hidden="true" />
+                                <li
+                                    key={i}
+                                    style={{ '--star-index': i } as React.CSSProperties}
+                                >
+                                    <Star size={14} className={styles.stars} fill="currentColor" aria-hidden="true" />
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 </figcaption>
             </div>

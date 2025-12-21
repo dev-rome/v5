@@ -14,10 +14,14 @@ export function FormInput<T extends FieldValues>({ id, label, type = "text", pla
                     {...register(id)}
                     className={`${styles.input} ${error ? styles.inputError : ""} ${className || ""}`}
                     placeholder={placeholder}
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${id}-error` : undefined}
                 />
             </div>
             {error && (
                 <p
+                    id={`${id}-error`}
+                    aria-live="polite"
                     className={styles.errorMessage}
                 >
                     {error.message}

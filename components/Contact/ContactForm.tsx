@@ -12,6 +12,7 @@ import styles from "./ContactForm.module.css";
 
 export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
     const [submitted, setSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const {
         register,
@@ -23,6 +24,7 @@ export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
     });
 
     const onSubmit = async (data: ContactFormData) => {
+        setSubmitError(null);
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
@@ -49,7 +51,7 @@ export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("Transmission failed. Please try again.");
+            setSubmitError("Transmission failed. Please try again.");
         }
     };
 
@@ -59,12 +61,19 @@ export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} ${className}`} noValidate>
+            {submitError && (
+                <div className={styles.errorBanner} role="alert">
+                    {submitError}
+                </div>
+            )}
             <FormInput
                 id="name"
                 label="NAME"
                 placeholder="Name"
                 register={register}
                 error={errors.name}
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? "name-error" : undefined}
             />
             <FormInput
                 id="email"
@@ -73,6 +82,8 @@ export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
                 placeholder="Email"
                 register={register}
                 error={errors.email}
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? "email-error" : undefined}
             />
             <FormInput
                 id="subject"
@@ -80,6 +91,8 @@ export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
                 placeholder="Subject"
                 register={register}
                 error={errors.subject}
+                aria-invalid={!!errors.subject}
+                aria-describedby={errors.subject ? "subject-error" : undefined}
             />
             <FormTextarea
                 id="message"
@@ -87,6 +100,8 @@ export function ContactForm({ onSuccess, className = "" }: ContactFormProps) {
                 placeholder="Message"
                 register={register}
                 error={errors.message}
+                aria-invalid={!!errors.message}
+                aria-describedby={errors.message ? "message-error" : undefined}
             />
             <button
                 type="submit"

@@ -8,7 +8,7 @@ export function ContactInfo() {
         >
             <div className={styles.infoCard}>
                 <p className={styles.description}>
-                    I'm currently open to new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out.
+                    I&apos;m currently open to new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out.
                 </p>
                 <div className={styles.socialGrid}>
                     <a href="https://github.com/dev-rome" className={styles.socialLink} aria-label="Github" target="_blank" rel="noopener noreferrer">

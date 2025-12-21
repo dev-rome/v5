@@ -13,7 +13,7 @@ export function SuccessMessage({ className = "" }: SuccessMessageProps) {
                 <CheckCircle2 size={32} />
             </div>
             <h3 className={styles.successTitle}>Transmission Received</h3>
-            <p className={styles.successMessage}>I'll be in touch shortly.</p>
+            <p className={styles.successMessage}>I&apos;ll be in touch shortly.</p>
         </div>
     );
 }

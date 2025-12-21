@@ -1,5 +1,4 @@
 import styles from "./HeroAvatar.module.css";
-/* Using global hero styles for the eye pulse animation to keep things consolidated */
 import heroStyles from "../../sections/HeroSection/Hero.module.css";
 
 export function HeroAvatar() {

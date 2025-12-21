@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
-import styles from "../../sections/HeroSection/Hero.module.css"; // Reuse existing styles
+import styles from "../../sections/HeroSection/Hero.module.css";
 
 export function ScrollButton() {
     return (
@@ -14,7 +14,7 @@ export function ScrollButton() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.5 }}
         >
-            <ArrowDown className="w-5 h-5" />
+            <ArrowDown className={styles.scrollIcon} />
         </motion.button>
     );
 }

@@ -25,7 +25,7 @@
 .textarea {
     width: 100%;
     padding: 0.875rem 1rem;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-dim-30);
     border: 0.0625rem solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-sm);
     color: var(--white);
@@ -36,13 +36,13 @@
 .textarea:focus {
     outline: none;
     border-color: var(--primary);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-dim-50);
     box-shadow: 0 0 0 1px var(--primary);
 }
 
 .inputError {
     border-color: var(--color-error);
-    background-color: rgba(239, 68, 68, 0.05);
+    background-color: var(--error-05);
 }
 
 .inputError:focus {
@@ -109,7 +109,7 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    background-color: rgba(0, 255, 157, 0.1);
+    background-color: var(--primary-10);
     color: var(--primary);
     display: flex;
     align-items: center;

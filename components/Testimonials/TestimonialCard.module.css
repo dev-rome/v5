@@ -19,8 +19,8 @@
 
 .card:hover {
     transform: translateY(-0.5rem);
-    border-color: rgba(0, 255, 157, 0.3);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3), 0 0 1rem rgba(0, 255, 157, 0.1);
+    border-color: var(--primary-30);
+    box-shadow: 0 1rem 2rem var(--bg-dim-30), 0 0 1rem var(--primary-10);
 }
 
 .quoteIcon {
@@ -32,7 +32,7 @@
 }
 
 .card:hover .quoteIcon {
-    color: rgba(0, 255, 157, 0.2);
+    color: var(--primary-20);
 }
 
 .quoteText {

@@ -2,8 +2,8 @@
     position: relative;
     padding: 1.5rem;
     border-radius: var(--radius-lg);
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(0, 255, 157, 0.2);
+    background-color: var(--bg-dim-40);
+    border: 1px solid var(--primary-20);
 }
 
 @media (min-width: 48rem) {
@@ -17,7 +17,7 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
-    color: rgba(0, 255, 157, 0.5);
+    color: var(--primary-50);
     font-size: 0.75rem;
 }
 
@@ -59,15 +59,15 @@
     padding: 0.375rem 0.75rem;
     font-size: 0.75rem;
     color: var(--primary);
-    background-color: rgba(0, 255, 157, 0.1);
-    border: 1px solid rgba(0, 255, 157, 0.2);
+    background-color: var(--primary-10);
+    border: 1px solid var(--primary-20);
     border-radius: var(--radius-sm);
     transition: background-color 150ms ease;
     cursor: default;
 }
 
 .skillTag:hover {
-    background-color: rgba(0, 255, 157, 0.2);
+    background-color: var(--primary-20);
 }
 
 .missionCard {
@@ -276,7 +276,7 @@
 
 .primaryDot {
     background-color: var(--primary);
-    box-shadow: 0 0 0.625rem rgba(0, 255, 157, 0.5);
+    box-shadow: 0 0 0.625rem var(--primary-50);
 }
 
 .primaryText {
@@ -327,7 +327,7 @@
 .profileGradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom right, rgba(0, 255, 157, 0.05), transparent, rgba(189, 0, 255, 0.05));
+    background: linear-gradient(to bottom right, var(--primary-05), transparent, var(--secondary-05));
     opacity: 0;
     transition: opacity 500ms ease;
     pointer-events: none;
@@ -349,7 +349,7 @@
     height: 4rem;
     border-radius: var(--radius-md);
     background-color: var(--black);
-    border: 1px solid rgba(0, 255, 157, 0.3);
+    border: 1px solid var(--primary-30);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -376,7 +376,7 @@
 
 .infoBox {
     padding: 0.75rem;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--bg-dim-40);
     border-radius: var(--radius-sm);
     border: 1px solid var(--glass-border);
 }

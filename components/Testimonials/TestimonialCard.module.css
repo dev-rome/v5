@@ -111,3 +111,14 @@
         opacity: 0.1;
     }
 }
+
+@media (max-width: 64rem) {
+    .card {
+        border-color: rgba(0, 255, 157, 0.3);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3), 0 0 1rem rgba(0, 255, 157, 0.1);
+    }
+
+    .quoteIcon {
+        color: rgba(0, 255, 157, 0.2);
+    }
+}

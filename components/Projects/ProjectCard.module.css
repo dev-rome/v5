@@ -1,158 +1,158 @@
 .projectCardWrapper {
-    position: relative;
-    min-height: 25rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  min-height: 25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .projectCard[data-id="1"] {
-    --project-color: #ff6b6b;
+  --project-color: #ff6b6b;
 }
 
 .projectCard[data-id="2"] {
-    --project-color: #4cc9f0;
+  --project-color: #4cc9f0;
 }
 
 .projectCard[data-id="3"] {
-    --project-color: #a8dadc;
+  --project-color: #a8dadc;
 }
 
 .projectCard[data-id="4"] {
-    --project-color: #fca311;
+  --project-color: #fca311;
 }
 
 .projectCard {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    border: 0.0625rem solid var(--glass-border);
-    background-color: var(--glass-bg);
-    cursor: pointer;
-    transition: var(--transition-card);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 0.0625rem solid var(--glass-border);
+  background-color: var(--glass-bg);
+  cursor: pointer;
+  transition: var(--transition-card);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .projectCard:hover {
-    border-color: var(--project-color);
-    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+  border-color: var(--project-color);
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
 }
 
 .cardLinkOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 
 .imageContainer {
-    width: 100%;
-    height: 14rem;
-    position: relative;
-    background-color: #0f0f0f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-bottom: 0.125rem solid var(--project-color);
+  width: 100%;
+  height: 14rem;
+  position: relative;
+  background-color: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 0.125rem solid var(--project-color);
 }
 
 .projectImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .projectCard:hover .projectImage {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .imagePlaceholder {
-    font-size: 3rem;
-    color: var(--project-color);
-    font-weight: 900;
+  font-size: 3rem;
+  color: var(--project-color);
+  font-weight: 900;
 }
 
 .contentBody {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .projectTitle {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
 }
 
 .projectDescShort {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    margin-bottom: 1rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .techStack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
 }
 
 .techTag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    background-color: var(--glass-bg);
-    border-radius: 0.25rem;
-    color: #d4d4d4;
-    border: 0.0625rem solid var(--glass-border);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--glass-bg);
+  border-radius: 0.25rem;
+  color: #d4d4d4;
+  border: 0.0625rem solid var(--glass-border);
 }
 
 .cardFooter {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding-top: 1rem;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-top: 1rem;
 }
 
 .actionButtons {
-    display: flex;
-    gap: 0.5rem;
-    width: 100%;
-    justify-content: flex-start;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .iconButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background-color: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    color: var(--color-text-muted);
-    transition: all 0.2s ease;
-    position: relative;
-    z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--color-text-muted);
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 20;
 }
 
 .iconButton:hover {
-    background-color: var(--accent);
-    border-color: var(--accent);
-    color: var(--black);
-    transform: translateY(-2px);
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--black);
+  transform: translateY(-2px);
 }

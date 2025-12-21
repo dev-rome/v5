@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ContentSection } from "./ContentSection";
 import { ProjectComponentProps } from "@/types/projects";
 import styles from "./ProjectMainContent.module.css";
 
@@ -24,43 +25,9 @@ export function ProjectMainContent({ project }: ProjectComponentProps) {
             <div className={styles.contentSection}>
                 {project.content && (
                     <>
-                        <div className={styles.sectionBlock}>
-                            <h2 className={styles.sectionTitle}>The Challenge</h2>
-                            {project.content.challenge.text && <p className={styles.textBlock}>{project.content.challenge.text}</p>}
-                            {project.content.challenge.list && (
-                                <ul className={styles.contentList}>
-                                    {project.content.challenge.list.map((item, i) => (
-                                        <li key={i} className={styles.contentListItem}>{item}</li>
-                                    ))}
-                                </ul>
-                            )}
-                            {project.content.challenge.closingText && <p className={`${styles.textBlock} ${styles.closingText}`}>{project.content.challenge.closingText}</p>}
-                        </div>
-
-                        <div className={styles.sectionBlock}>
-                            <h2 className={styles.sectionTitle}>The Solution</h2>
-                            {project.content.solution.text && <p className={styles.textBlock}>{project.content.solution.text}</p>}
-                            {project.content.solution.list && (
-                                <ul className={styles.contentList}>
-                                    {project.content.solution.list.map((item, i) => (
-                                        <li key={i} className={styles.contentListItem}>{item}</li>
-                                    ))}
-                                </ul>
-                            )}
-                            {project.content.solution.closingText && <p className={`${styles.textBlock} ${styles.closingText}`}>{project.content.solution.closingText}</p>}
-                        </div>
-                        <div className={styles.sectionBlock}>
-                            <h2 className={styles.sectionTitle}>The Outcome</h2>
-                            {project.content.outcome.text && <p className={styles.textBlock}>{project.content.outcome.text}</p>}
-                            {project.content.outcome.list && (
-                                <ul className={styles.contentList}>
-                                    {project.content.outcome.list.map((item, i) => (
-                                        <li key={i} className={styles.contentListItem}>{item}</li>
-                                    ))}
-                                </ul>
-                            )}
-                            {project.content.outcome.closingText && <p className={`${styles.textBlock} ${styles.closingText}`}>{project.content.outcome.closingText}</p>}
-                        </div>
+                        <ContentSection title="The Challenge" content={project.content.challenge} />
+                        <ContentSection title="The Solution" content={project.content.solution} />
+                        <ContentSection title="The Outcome" content={project.content.outcome} />
                     </>
                 )}
             </div>

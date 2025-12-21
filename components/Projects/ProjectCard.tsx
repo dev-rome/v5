@@ -20,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
                     {project.image ? (
                         <Image
                             src={project.image}
-                            alt={project.title}
+                            alt={`${project.title} Project Image`}
                             className={styles.projectImage}
                             width={500}
                             height={500}

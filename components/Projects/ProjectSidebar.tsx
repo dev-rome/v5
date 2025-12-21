@@ -30,19 +30,19 @@ export function ProjectSidebar({ project }: ProjectComponentProps) {
             </div>
             <div className={styles.linksContainer}>
                 {project.links.demo && (
-                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className={`${styles.linkButton} ${styles.primaryLink}`}>
+                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" className={`${styles.linkButton} ${styles.primaryLink}`} aria-label="Live Demo">
                         <ExternalLink size={20} />
                         Live Demo
                     </a>
                 )}
                 {project.links.repo && (
-                    <a href={project.links.repo} target="_blank" rel="noopener noreferrer" className={`${styles.linkButton} ${styles.secondaryLink}`}>
+                    <a href={project.links.repo} target="_blank" rel="noopener noreferrer" className={`${styles.linkButton} ${styles.secondaryLink}`} aria-label="Source Code">
                         <Github size={20} />
                         Source Code
                     </a>
                 )}
             </div>
-            <div className={styles.logoChar} style={{ color: project.color }}>
+            <div className={styles.logoChar} style={{ color: project.color }} aria-hidden="true">
                 {project.title[0]}
             </div>
         </aside>

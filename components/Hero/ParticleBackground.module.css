@@ -36,12 +36,43 @@
     transform: translateZ(0);
 }
 
+/* Animations */
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes drift {
+    0% {
+        transform: translateX(-10%);
+    }
+
+    50% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
 .star {
     position: absolute;
     background-color: white;
     border-radius: 9999px;
     width: 0.125rem;
     height: 0.125rem;
+    animation: twinkle 3s ease-in-out infinite;
+    will-change: opacity, transform;
 }
 
 .clouds {
@@ -50,6 +81,7 @@
     opacity: 0.2;
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1), transparent 70%);
     will-change: transform;
+    animation: drift 60s linear infinite;
 }
 
 .shootingStarContainer {

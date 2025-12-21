@@ -32,7 +32,7 @@ export function ParticleBackground() {
   return (
     <div className={styles.container}>
       <div className={styles.nightGradient} />
-      {/* 2. The Moon (Detailed) */}
+      {/* 2. The Moon (Optimized) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -47,31 +47,20 @@ export function ParticleBackground() {
               <stop offset="50%" stopColor="#e2e2e2" />
               <stop offset="100%" stopColor="#a0a0a0" />
             </radialGradient>
-            <filter id="craterShadow">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur" />
-              <feOffset in="blur" dx="1" dy="1" result="offsetBlur" />
-              <feComposite in="SourceGraphic" in2="offsetBlur" operator="over" />
-            </filter>
           </defs>
           {/* Main Body */}
           <circle cx="50" cy="50" r="48" fill="url(#moonGradient)" />
-          {/* Maria (Dark Spots) */}
+          {/* Maria (Dark Spots) - Simplified Opacity */}
           <path d="M30,30 Q40,20 55,35 T70,50 Q60,65 45,55 T30,30" fill="#ccc" opacity="0.4" />
           <path d="M60,20 Q70,15 80,25 T75,40 Q65,45 55,35" fill="#ccc" opacity="0.3" />
           <path d="M40,60 Q50,55 65,65 T70,80 Q55,85 45,75" fill="#ccc" opacity="0.4" />
-          {/* Craters */}
-          <circle cx="25" cy="45" r="3" fill="#bbb" opacity="0.6" />
-          <circle cx="35" cy="70" r="4" fill="#bbb" opacity="0.6" />
-          <circle cx="75" cy="35" r="2.5" fill="#bbb" opacity="0.5" />
-          <circle cx="65" cy="65" r="5" fill="#bbb" opacity="0.5" />
-          <circle cx="85" cy="55" r="1.5" fill="#bbb" opacity="0.4" />
           {/* Atmosphere/Glow Ring */}
           <circle cx="50" cy="50" r="48" fill="none" stroke="#fff" strokeWidth="1" opacity="0.2" />
         </svg>
       </motion.div>
-      {/* 3. Twinkling Stars */}
+      {/* 3. Twinkling Stars (CSS Animation) */}
       {stars.map((star, i) => (
-        <motion.div
+        <div
           key={i}
           className={styles.star}
           style={{
@@ -80,25 +69,13 @@ export function ParticleBackground() {
             width: star.size,
             height: star.size,
             opacity: isMobile ? 0.6 : undefined,
-          }}
-          animate={isMobile ? undefined : {
-            opacity: [0.2, 1, 0.2],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: Math.random() * 3 + 2,
-            repeat: Infinity,
-            delay: star.delay,
-            ease: "easeInOut",
+            animationDuration: isMobile ? '0s' : `${Math.random() * 3 + 2}s`,
+            animationDelay: `${star.delay}s`,
           }}
         />
       ))}
       {!isMobile && (
-        <motion.div
-          className={styles.clouds}
-          animate={{ x: ["-10%", "10%", "-10%"] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        />
+        <div className={styles.clouds} />
       )}
       {!isMobile && (
         <>

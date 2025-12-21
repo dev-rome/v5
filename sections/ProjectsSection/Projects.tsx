@@ -1,15 +1,19 @@
 "use client";
 
-import { ProjectHeader } from "@/components/Projects/ProjectHeader";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ProjectCard } from "@/components/Projects/ProjectCard";
 import { PROJECTS } from "@/data/projects";
 import styles from "./Projects.module.css";
 
 export function Projects() {
     return (
-        <section className={styles.sectionContainer} id="projects">
+        <section className={styles.sectionContainer} id="projects" aria-labelledby="projects-heading">
             <div className={styles.maxContainer}>
-                <ProjectHeader />
+                <SectionHeader
+                    title="PROJECTS"
+                    subtitle="// QUEST_LOG"
+                    titleId="projects-heading"
+                />
                 <div className={styles.projectsGrid}>
                     {PROJECTS.map((project) => (
                         <ProjectCard

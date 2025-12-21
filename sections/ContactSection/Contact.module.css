@@ -1,92 +1,92 @@
 .sectionContainer {
-    width: 100%;
-    padding: 6rem 1rem;
-    position: relative;
-    overflow: hidden;
-    background-color: var(--background);
-    border-top: 0.0625rem solid var(--glass-border);
+  width: 100%;
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background);
+  border-top: 0.0625rem solid var(--glass-border);
 }
 
 @media (min-width: 48rem) {
-    .sectionContainer {
-        padding-inline: 2rem;
-    }
+  .sectionContainer {
+    padding-inline: 2rem;
+  }
 }
 
 .maxContainer {
-    max-width: 72rem;
-    margin-inline: auto;
-    position: relative;
-    z-index: 10;
+  max-width: 72rem;
+  margin-inline: auto;
+  position: relative;
+  z-index: 10;
 }
 
-.headerWrapper {
-    text-align: center;
-    margin-bottom: 4rem;
-    display: flex;
+.contactHeader {
+  text-align: center;
+  align-items: center;
+  border-bottom: none;
+  padding-bottom: 0;
+  gap: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .contactHeader {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+  }
 }
 
-.sectionTitle {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    background-image: linear-gradient(to right, var(--primary), var(--secondary));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+.contactTitle {
+  font-size: 1.875rem;
 }
 
-.subtitle {
-    font-size: 0.75rem;
-    color: var(--color-text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+.contactSubtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
 }
 
 .contentGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
 }
 
 @media (min-width: 64rem) {
-    .contentGrid {
-        grid-template-columns: 1fr 1.5fr;
-        gap: 4rem;
-    }
+  .contentGrid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+  }
 }
 
 .formCard {
-    background-color: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    border: 0.0625rem solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 0.0625rem solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .bgPulse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 255, 157, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 157, 0.05) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .footerCopyright {
-    margin-top: 6rem;
-    text-align: center;
-    color: var(--white);
-    font-size: 0.875rem;
-    font-family: var(--font-mono);
+  margin-top: 6rem;
+  text-align: center;
+  color: var(--white);
+  font-size: 0.875rem;
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MethodologyCard } from "../../components/Methodology/MethodologyCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { METHODS } from "@/data/methodology";
 import styles from "./Methodology.module.css";
 
@@ -9,17 +10,14 @@ export function Methodology() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
-        <section className={styles.section} id="methodology">
+        <section className={styles.section} id="methodology" aria-labelledby="methodology-heading">
             <div className={styles.container}>
-                <div
-                    className={styles.header}
-                >
-                    <h2 className={styles.sectionTitle}>
-                        METHODOLOGY
-                    </h2>
-                    <span className={styles.subtitle}>// OPERATING_PROTOCOLS</span>
-                </div>
-                <ol className={styles.grid}>
+                <SectionHeader
+                    title="METHODOLOGY"
+                    subtitle="// OPERATING_PROTOCOLS"
+                    titleId="methodology-heading"
+                />
+                <ul className={styles.grid}>
                     {METHODS.map((method, index) => (
                         <li
                             key={method.number}
@@ -30,7 +28,7 @@ export function Methodology() {
                             <MethodologyCard {...method} />
                         </li>
                     ))}
-                </ol>
+                </ul>
             </div>
         </section>
     );

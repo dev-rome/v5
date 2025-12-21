@@ -1,99 +1,56 @@
 .section {
-    position: relative;
-    width: 100%;
-    padding: 6rem 1rem;
-    background-color: var(--background);
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 6rem 1rem;
+  background-color: var(--background);
+  overflow: hidden;
 }
 
 @media (min-width: 48rem) {
-    .section {
-        padding-inline: 2rem;
-    }
+  .section {
+    padding-inline: 2rem;
+  }
 }
 
 .container {
-    position: relative;
-    z-index: 10;
-    max-width: 80rem;
-    margin-inline: auto;
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 4rem;
-    padding-bottom: 1rem;
-    border-bottom: 0.0625rem solid var(--glass-border);
-}
-
-@media (min-width: 48rem) {
-    .header {
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 1rem;
-    }
-}
-
-.sectionTitle {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    background-image: linear-gradient(to right, var(--primary), var(--secondary));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-@media (min-width: 48rem) {
-    .sectionTitle {
-        font-size: 2.25rem;
-    }
-}
-
-.subtitle {
-    color: var(--color-text-dim);
-    font-size: 0.875rem;
-    margin-bottom: 0.25rem;
-}
-
-@media (min-width: 48rem) {
-    .subtitle {
-        margin-bottom: 0.5rem;
-    }
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin-inline: auto;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 48rem) {
-    .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 80rem) {
-    .grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .cardWrapper {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cardWrapperHovered {
-    z-index: 50;
+  z-index: 50;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }

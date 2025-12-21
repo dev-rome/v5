@@ -1,3 +1,4 @@
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ContactForm } from "@/components/Contact/ContactForm";
 import { ContactInfo } from "@/components/Contact/ContactInfo";
 import styles from "./Contact.module.css";
@@ -6,21 +7,22 @@ export function Contact() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <section className={styles.sectionContainer} id="contact" aria-label="Contact">
+        <section className={styles.sectionContainer} id="contact" aria-labelledby="contact-heading">
             <div className={styles.maxContainer}>
-                <div
-                    className={styles.headerWrapper}
-                >
-                    <h2 className={styles.sectionTitle}>CONTACT</h2>
-                    <span className={styles.subtitle}>// TRANSMISSION</span>
-                </div>
-
+                <SectionHeader
+                    title="CONTACT"
+                    subtitle="// TRANSMISSION"
+                    titleId="contact-heading"
+                    className={styles.contactHeader}
+                    titleClassName={styles.contactTitle}
+                    subtitleClassName={styles.contactSubtitle}
+                />
                 <div className={styles.contentGrid}>
                     <ContactInfo />
                     <div
                         className={styles.formCard}
                     >
-                        <div className={styles.bgPulse} />
+                        <div className={styles.bgPulse} aria-hidden="true" />
 
                         <ContactForm />
                     </div>

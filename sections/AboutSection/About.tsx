@@ -1,3 +1,4 @@
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ProfileCard } from "../../components/About/ProfileCard";
 import { SkillsGrid } from "../../components/About/SkillsGrid";
 import { BioTerminal } from "../../components/About/BioTerminal";
@@ -6,18 +7,15 @@ import styles from "./About.module.css";
 
 export function About() {
   return (
-    <section id="about" className={styles.sectionContainer}>
-      <div className={styles.bgDecorRight} />
-      <div className={styles.bgDecorLeft} />
+    <section id="about" className={styles.sectionContainer} aria-labelledby="about-heading">
+      <div className={styles.bgDecorRight} aria-hidden="true"/>
+      <div className={styles.bgDecorLeft} aria-hidden="true"/>
       <div className={styles.maxContainer}>
-        <div
-          className={styles.headerWrapper}
-        >
-          <h2 className={styles.sectionTitle}>
-            About
-          </h2>
-          <span className={styles.versionTag}>v5.0.1 // CLASSIFIED</span>
-        </div>
+        <SectionHeader
+          title="About"
+          subtitle="v5.0.1 // CLASSIFIED"
+          titleId="about-heading"
+        />
         <div className={styles.contentGrid}>
           <div className={styles.leftColumn}>
             <ProfileCard />

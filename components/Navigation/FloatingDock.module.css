@@ -1,106 +1,106 @@
 .dockContainer {
-    position: fixed;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    background: var(--black);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--glass-border-strong);
-    border-radius: 9999px;
-    box-shadow: 0 10px 30px -10px var(--bg-dim-80);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    padding: 0.5rem;
-    width: fit-content;
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border-strong);
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px -10px var(--bg-dim-80);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  padding: 0.5rem;
+  width: fit-content;
 }
 
 .dockContent {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .dockItem {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-muted);
-    border-radius: 50%;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    text-decoration: none;
-    border: 1px solid transparent;
-    width: 3rem;
-    height: 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  width: 3rem;
+  height: 3rem;
 }
 
 .dockItem:hover {
-    color: var(--white);
-    background: var(--glass-bg);
+  color: var(--white);
+  background: var(--glass-bg);
 }
 
 .dockItemActive {
-    color: var(--primary);
-    background: var(--primary-10);
-    box-shadow: 0 0 15px var(--primary-20);
-    border-color: var(--primary-30);
+  color: var(--primary);
+  background: var(--primary-10);
+  box-shadow: 0 0 15px var(--primary-20);
+  border-color: var(--primary-30);
 }
 
 .tooltip {
-    position: absolute;
-    padding: 0.5rem 0.75rem;
-    background: var(--black);
-    border: 1px solid var(--glass-border);
-    color: var(--white);
-    font-size: 0.75rem;
-    font-family: var(--font-heading);
-    border-radius: 0.5rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.2s ease;
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%) translateY(10px);
-    margin-top: 0.5rem;
+  position: absolute;
+  padding: 0.5rem 0.75rem;
+  background: var(--black);
+  border: 1px solid var(--glass-border);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%) translateY(10px);
+  margin-top: 0.5rem;
 }
 
 .dockItem:hover .tooltip {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .separator {
-    width: 1px;
-    height: 1.5rem;
-    background: var(--glass-border);
-    margin: 0 0.5rem;
+  width: 1px;
+  height: 1.5rem;
+  background: var(--glass-border);
+  margin: 0 0.5rem;
 }
 
 @media (max-width: 47.9375rem) {
-    .dockContainer {
-        top: 1rem;
-        padding: 0.25rem;
-    }
+  .dockContainer {
+    top: 1rem;
+    padding: 0.25rem;
+  }
 
-    .dockContent {
-        gap: 0.25rem;
-    }
+  .dockContent {
+    gap: 0.25rem;
+  }
 
-    .dockItem {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
+  .dockItem {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 
-    .separator {
-        margin: 0 0.25rem;
-    }
+  .separator {
+    margin: 0 0.25rem;
+  }
 
-    .tooltip {
-        display: none;
-    }
+  .tooltip {
+    display: none;
+  }
 }

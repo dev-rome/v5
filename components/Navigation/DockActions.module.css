@@ -1,67 +1,67 @@
 .dockItem {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    text-decoration: none;
-    border: 1px solid transparent;
-    width: 2.5rem;
-    height: 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 @media (min-width: 64rem) {
-    .dockItem {
-        width: 3rem;
-        height: 3rem;
-    }
+  .dockItem {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .dockItem:hover {
-    color: var(--white);
-    background: var(--glass-bg);
+  color: var(--white);
+  background: var(--glass-bg);
 }
 
 .tooltip {
-    position: absolute;
-    padding: 0.5rem 0.75rem;
-    background: var(--black);
-    border: 1px solid var(--glass-border);
-    color: var(--white);
-    font-size: 0.75rem;
-    font-family: var(--font-heading);
-    border-radius: 0.5rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.2s ease;
+  position: absolute;
+  padding: 0.5rem 0.75rem;
+  background: var(--black);
+  border: 1px solid var(--glass-border);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
 }
 
 .dockItem:hover .tooltip {
-    opacity: 1;
+  opacity: 1;
 }
 
 @media (max-width: 47.9375rem) {
-    .tooltip {
-        display: none;
-    }
+  .tooltip {
+    display: none;
+  }
 }
 
 @media (min-width: 48rem) {
-    .tooltip {
-        left: 50%;
-        right: auto;
-        top: 100%;
-        bottom: auto;
-        transform: translateX(-50%) translateY(10px);
-        margin-left: 0;
-        margin-top: 0.5rem;
-    }
+  .tooltip {
+    left: 50%;
+    right: auto;
+    top: 100%;
+    bottom: auto;
+    transform: translateX(-50%) translateY(10px);
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
 
-    .dockItem:hover .tooltip {
-        transform: translateX(-50%) translateY(0);
-    }
+  .dockItem:hover .tooltip {
+    transform: translateX(-50%) translateY(0);
+  }
 }

@@ -1,5 +1,5 @@
-import { Cpu } from "lucide-react";
 import { SKILLS } from "@/data/about";
+import { Cpu } from "lucide-react";
 import styles from "./AboutComponents.module.css";
 
 export function SkillsGrid() {
@@ -8,7 +8,7 @@ export function SkillsGrid() {
             className={styles.skillsCard}
         >
             <h3 className={styles.skillsHeader}>
-                <Cpu className="w-4 h-4 text-[var(--secondary)]" />
+                <Cpu className={styles.cpuIcon} aria-hidden="true"/>
                 SKILLS
             </h3>
             <div className={styles.skillsContainer}>

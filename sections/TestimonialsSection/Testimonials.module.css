@@ -3,7 +3,6 @@
     padding: 6rem 1rem;
     background-color: var(--background);
     position: relative;
-    z-index: 10;
 }
 
 @media (min-width: 48rem) {
@@ -68,11 +67,5 @@
 
     .testimonialsGrid>article:nth-child(3) {
         grid-column: span 2;
-    }
-}
-
-@media (min-width: 64rem) {
-    .testimonialsGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }

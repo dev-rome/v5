@@ -10,9 +10,8 @@ export function Testimonials() {
                     className={styles.headerWrapper}
                 >
                     <h2 id="testimonials-heading" className={styles.sectionTitle}>TESTIMONIALS</h2>
-                    <span className={styles.subtitle}>// ENDORSEMENTS</span>
+                    <span className={styles.subtitle}>{`// ENDORSEMENTS`}</span>
                 </div>
-
                 <div className={styles.testimonialsGrid}>
                     {TESTIMONIALS.map((testimonial, index) => (
                         <article

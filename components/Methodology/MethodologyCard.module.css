@@ -118,7 +118,6 @@
    .line {
       width: 100%;
       transform: scaleX(0.15);
-      /* Approx 3rem / 20rem assuming card width or relative wrapper */
       transform-origin: left;
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: transform;

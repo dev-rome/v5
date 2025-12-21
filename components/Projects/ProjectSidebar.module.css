@@ -1,4 +1,6 @@
 .sidebar {
+    position: relative;
+    overflow: hidden;
     padding: 6rem 1.5rem 2rem;
     display: flex;
     flex-direction: column;
@@ -121,6 +123,19 @@
     background: var(--card);
 }
 
+.logoChar {
+    font-size: 14rem;
+    position: absolute;
+    bottom: -3rem;
+    left: -2rem;
+    right: auto;
+    opacity: 0.05;
+    font-weight: 900;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
 @media (min-width: 64rem) {
     .sidebar {
         position: sticky;
@@ -140,18 +155,19 @@
         display: none;
     }
 
+    .logoChar {
+        display: none;
+    }
+
     .projectTitle {
         font-size: 3rem;
     }
 
     .logoChar {
+        display: block;
         font-size: 12rem;
-        position: absolute;
         bottom: -2rem;
         right: -2rem;
-        opacity: 0.05;
-        font-weight: 900;
-        pointer-events: none;
-        user-select: none;
+        left: auto;
     }
 }

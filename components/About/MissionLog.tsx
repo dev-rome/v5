@@ -4,16 +4,16 @@ import styles from "./AboutComponents.module.css";
 
 export function MissionLog() {
     return (
-        <div
+        <article
             className={styles.missionCard}
         >
             <h3 className={styles.missionHeader}>
                 <History className="w-4 h-4 text-[var(--accent)]" />
                 MISSION_LOG
             </h3>
-            <div className={styles.timelineContainer}>
+            <ol className={styles.timelineContainer}>
                 {MISSION_LOG.map((item, index) => (
-                    <div key={index} className={`${styles.timelineItem} group`}>
+                    <li key={index} className={`${styles.timelineItem} group`}>
                         <div className={styles.nodeWrapper}>
                             <div className={`${styles.nodeDot} ${index === 0 ? styles.primaryDot : index === 1 ? styles.secondaryDot : styles.accentDot}`} />
                             <div className={index === MISSION_LOG.length - 1 ? styles.connectorLineFade : styles.connectorLine} />
@@ -37,9 +37,9 @@ export function MissionLog() {
                                 ))}
                             </ul>
                         </div>
-                    </div>
+                    </li>
                 ))}
-            </div>
-        </div>
+            </ol>
+        </article>
     );
 }

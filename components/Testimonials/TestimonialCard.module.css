@@ -50,7 +50,7 @@
     align-items: center;
     gap: 1rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--glass-border);
 }
 
 .avatarPlaceholder {
@@ -97,7 +97,7 @@
 
     .featuredCard .clientInfo {
         border-top: none;
-        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 1px solid var(--glass-border);
         padding-top: 0;
         padding-left: 2rem;
         min-width: 250px;

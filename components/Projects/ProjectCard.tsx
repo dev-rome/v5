@@ -6,7 +6,7 @@ import styles from "./ProjectCard.module.css";
 
 export function ProjectCard({ project }: { project: Project }) {
     return (
-        <div className={styles.projectCardWrapper}>
+        <article className={styles.projectCardWrapper}>
             <div
                 className={styles.projectCard}
                 data-id={project.id}
@@ -72,6 +72,6 @@ export function ProjectCard({ project }: { project: Project }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     );
 }

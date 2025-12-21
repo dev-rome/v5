@@ -113,10 +113,10 @@
 .techTag {
     font-size: 0.75rem;
     padding: 0.25rem 0.5rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--glass-bg);
     border-radius: 0.25rem;
     color: #d4d4d4;
-    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+    border: 0.0625rem solid var(--glass-border);
 }
 
 .cardFooter {
@@ -142,8 +142,8 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
     color: var(--color-text-muted);
     transition: all 0.2s ease;
     position: relative;

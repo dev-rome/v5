@@ -4,7 +4,7 @@ import styles from "./AboutComponents.module.css";
 
 export function BioTerminal() {
     return (
-        <div
+        <article
             className={styles.terminalCard}
         >
             <div className={styles.scanline} />
@@ -17,6 +17,6 @@ export function BioTerminal() {
                     <p key={i}>{p}</p>
                 ))}
             </div>
-        </div>
+        </article>
     );
 }

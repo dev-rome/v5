@@ -3,7 +3,7 @@ import styles from "./AboutComponents.module.css";
 
 export function ProfileCard() {
     return (
-        <div
+        <article
             className={styles.profileCard}
         >
             <div className={styles.profileGradient} />
@@ -26,6 +26,6 @@ export function ProfileCard() {
                     <p className={styles.infoValue}>Frontend Engineer</p>
                 </div>
             </div>
-        </div>
+        </article>
     );
 }

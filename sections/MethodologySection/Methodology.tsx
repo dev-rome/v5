@@ -19,18 +19,18 @@ export function Methodology() {
                     </h2>
                     <span className={styles.subtitle}>// OPERATING_PROTOCOLS</span>
                 </div>
-                <div className={styles.grid}>
+                <ol className={styles.grid}>
                     {METHODS.map((method, index) => (
-                        <div
+                        <li
                             key={method.number}
                             className={`${styles.cardWrapper} ${hoveredIndex === index ? styles.cardWrapperHovered : ''}`}
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(null)}
                         >
                             <MethodologyCard {...method} />
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ol>
             </div>
         </section>
     );

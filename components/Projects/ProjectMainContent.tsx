@@ -24,7 +24,7 @@ export function ProjectMainContent({ project }: ProjectComponentProps) {
             <div className={styles.contentSection}>
                 {project.content && (
                     <>
-                        <div style={{ marginBottom: '4rem' }}>
+                        <div className={styles.sectionBlock}>
                             <h2 className={styles.sectionTitle}>The Challenge</h2>
                             {project.content.challenge.text && <p className={styles.textBlock}>{project.content.challenge.text}</p>}
                             {project.content.challenge.list && (
@@ -34,10 +34,10 @@ export function ProjectMainContent({ project }: ProjectComponentProps) {
                                     ))}
                                 </ul>
                             )}
-                            {project.content.challenge.closingText && <p className={styles.textBlock} style={{ marginTop: '1.5rem' }}>{project.content.challenge.closingText}</p>}
+                            {project.content.challenge.closingText && <p className={`${styles.textBlock} ${styles.closingText}`}>{project.content.challenge.closingText}</p>}
                         </div>
 
-                        <div style={{ marginBottom: '4rem' }}>
+                        <div className={styles.sectionBlock}>
                             <h2 className={styles.sectionTitle}>The Solution</h2>
                             {project.content.solution.text && <p className={styles.textBlock}>{project.content.solution.text}</p>}
                             {project.content.solution.list && (
@@ -47,9 +47,9 @@ export function ProjectMainContent({ project }: ProjectComponentProps) {
                                     ))}
                                 </ul>
                             )}
-                            {project.content.solution.closingText && <p className={styles.textBlock} style={{ marginTop: '1.5rem' }}>{project.content.solution.closingText}</p>}
+                            {project.content.solution.closingText && <p className={`${styles.textBlock} ${styles.closingText}`}>{project.content.solution.closingText}</p>}
                         </div>
-                        <div style={{ marginBottom: '4rem' }}>
+                        <div className={styles.sectionBlock}>
                             <h2 className={styles.sectionTitle}>The Outcome</h2>
                             {project.content.outcome.text && <p className={styles.textBlock}>{project.content.outcome.text}</p>}
                             {project.content.outcome.list && (
@@ -59,7 +59,7 @@ export function ProjectMainContent({ project }: ProjectComponentProps) {
                                     ))}
                                 </ul>
                             )}
-                            {project.content.outcome.closingText && <p className={styles.textBlock} style={{ marginTop: '1.5rem' }}>{project.content.outcome.closingText}</p>}
+                            {project.content.outcome.closingText && <p className={`${styles.textBlock} ${styles.closingText}`}>{project.content.outcome.closingText}</p>}
                         </div>
                     </>
                 )}

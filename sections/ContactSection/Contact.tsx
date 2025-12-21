@@ -25,11 +25,11 @@ export function Contact() {
                         <ContactForm />
                     </div>
                 </div>
-                <div
+                <footer
                     className={styles.footerCopyright}
                 >
                     <p>© {currentYear} Jerome Haynes. All systems nominal.</p>
-                </div>
+                </footer>
             </div>
         </section>
     );

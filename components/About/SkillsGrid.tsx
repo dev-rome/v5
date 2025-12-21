@@ -4,7 +4,7 @@ import styles from "./AboutComponents.module.css";
 
 export function SkillsGrid() {
     return (
-        <div
+        <article
             className={styles.skillsCard}
         >
             <h3 className={styles.skillsHeader}>
@@ -21,6 +21,6 @@ export function SkillsGrid() {
                     </span>
                 ))}
             </div>
-        </div>
+        </article>
     );
 }

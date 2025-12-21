@@ -17,7 +17,6 @@ export function Testimonials() {
                     {TESTIMONIALS.map((testimonial, index) => (
                         <article
                             key={testimonial.id}
-                            className={styles.card}
                         >
                             <TestimonialCard testimonial={testimonial} index={index} />
                         </article>

@@ -24,13 +24,6 @@ export function HeroAvatar() {
               <stop offset="0%" stopColor="#252525" />
               <stop offset="100%" stopColor="#111" />
             </linearGradient>
-            <filter id="neonGlow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-              <feMerge>
-                <feMergeNode in="coloredBlur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
             <mask id="characterMask">
               <path
                 d="M80 400 L60 380 Q40 320 80 280 L110 260 L290 260 L320 280 Q360 320 340 380 L320 400 Z"
@@ -67,7 +60,8 @@ export function HeroAvatar() {
             {/* Inner Shadow (Face Void) */}
             <ellipse cx="200" cy="190" rx="60" ry="70" fill="#000" />
             {/* Glowing Eyes (Hidden in shadow) */}
-            <g filter="url(#neonGlow)">
+            {/* Glowing Eyes (CSS Filter for performance) */}
+            <g style={{ filter: "drop-shadow(0 0 2px #00ff9d)" }}>
               <motion.path
                 d="M170 190 L185 195 L170 200"
                 fill="none"

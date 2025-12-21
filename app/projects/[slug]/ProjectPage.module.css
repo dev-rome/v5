@@ -1,0 +1,24 @@
+.pageContainer {
+    min-height: 100dvh;
+    background-color: var(--background);
+    color: var(--foreground);
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+.layoutGrid {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 64rem) {
+    .pageContainer {
+        padding-bottom: 0;
+    }
+
+    .layoutGrid {
+        display: grid;
+        grid-template-columns: 24rem 1fr;
+        min-height: 100dvh;
+    }
+}

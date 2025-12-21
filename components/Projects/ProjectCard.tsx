@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
 import { Project } from "@/types/projects";
 import styles from "./ProjectCard.module.css";
@@ -10,6 +11,11 @@ export function ProjectCard({ project }: { project: Project }) {
                 className={styles.projectCard}
                 data-id={project.id}
             >
+                <Link
+                    href={`/projects/${project.slug}`}
+                    className={styles.cardLinkOverlay}
+                    aria-label={`View case study for ${project.title}`}
+                />
                 <div className={styles.imageContainer}>
                     {project.image ? (
                         <Image

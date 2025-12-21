@@ -1,0 +1,157 @@
+.sidebar {
+    padding: 6rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    margin-bottom: 2rem;
+    width: fit-content;
+}
+
+.backButton:hover {
+    color: var(--primary);
+}
+
+.projectTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    background-image: linear-gradient(to right, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.projectDesc {
+    font-size: 1.125rem;
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.statGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--white);
+}
+
+.statValue {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techTag {
+    font-size: 0.875rem;
+    color: var(--white);
+}
+
+.techTag:not(:last-child)::after {
+    content: "•";
+    margin-left: 0.5rem;
+    opacity: 0.5;
+}
+
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.linkButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.primaryLink {
+    background: var(--foreground);
+    color: var(--background);
+}
+
+.primaryLink:hover {
+    opacity: 0.9;
+}
+
+.secondaryLink {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+}
+
+.secondaryLink:hover {
+    background: var(--card);
+}
+
+@media (min-width: 64rem) {
+    .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100dvh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-bottom: none;
+        border-right: 1px solid var(--border);
+        padding: 4rem 3rem;
+        justify-content: flex-start;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .sidebar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .projectTitle {
+        font-size: 3rem;
+    }
+
+    .logoChar {
+        font-size: 12rem;
+        position: absolute;
+        bottom: -2rem;
+        right: -2rem;
+        opacity: 0.05;
+        font-weight: 900;
+        pointer-events: none;
+        user-select: none;
+    }
+}

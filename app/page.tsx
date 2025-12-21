@@ -4,6 +4,7 @@ import { Methodology } from "@/sections/MethodologySection/Methodology";
 import { Projects } from "@/sections/ProjectsSection/Projects";
 import { Testimonials } from "@/sections/TestimonialsSection/Testimonials";
 import { Contact } from "@/sections/ContactSection/Contact";
+import { HashCleaner } from "@/components/Utils/HashCleaner";
 import styles from "./Layout.module.css";
 
 export default function Home() {
@@ -14,7 +15,9 @@ export default function Home() {
       <Methodology />
       <Projects />
       <Testimonials />
+      <Testimonials />
       <Contact />
+      <HashCleaner />
     </main>
   );
 };

@@ -10,6 +10,7 @@ export function ProjectCard({ project }: { project: Project }) {
             <div
                 className={styles.projectCard}
                 data-id={project.id}
+                style={{ '--project-color': project.color } as React.CSSProperties}
             >
                 <Link
                     href={`/projects/${project.slug}`}

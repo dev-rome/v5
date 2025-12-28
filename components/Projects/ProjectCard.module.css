@@ -6,22 +6,6 @@
   flex-direction: column;
 }
 
-.projectCard[data-id="1"] {
-  --project-color: #ff6b6b;
-}
-
-.projectCard[data-id="2"] {
-  --project-color: #4cc9f0;
-}
-
-.projectCard[data-id="3"] {
-  --project-color: #a8dadc;
-}
-
-.projectCard[data-id="4"] {
-  --project-color: #fca311;
-}
-
 .projectCard {
   position: relative;
   overflow: hidden;

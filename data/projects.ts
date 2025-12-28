@@ -3,6 +3,58 @@ import { Project } from "@/types/projects";
 export const PROJECTS: Project[] = [
   {
     id: 1,
+    title: "Todo List",
+    shortDesc:
+      "A feature-rich todo list application built with React and TypeScript, supporting drag-and-drop, local storage persistence, and theme toggling.",
+    description:
+      "\nThis project was completed as a Frontend Mentor challenge to strengthen my frontend skills in React and TypeScript. It focuses on state management, user interactions, and writing clean, maintainable UI code.\n\nThe application allows users to add new todos, mark them as complete, delete them, filter by all/active/completed, clear completed todos, toggle light and dark themes, and reorder items via drag-and-drop. Tasks are persisted in local storage to maintain a consistent experience across sessions.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    links: {
+      demo: "https://benevolent-truffle-ae5f5b.netlify.app/",
+      repo: "https://github.com/dev-rome/FM-Todo-App",
+    },
+    color: "#cc5de8",
+    image: "/images/todo-list.png",
+    slug: "todo-list",
+    content: {
+      challenge: {
+        text: "The goal was to build a modern todo application that:",
+        list: [
+          "Supports adding, completing, and deleting todos",
+          "Allows filtering by all, active, or completed todos",
+          "Clears all completed todos at once",
+          "Persists tasks in local storage",
+          "Supports light and dark themes with toggle functionality",
+          "Reorders todos via drag-and-drop",
+          "Provides a responsive layout and hover states for interactive elements",
+        ],
+      },
+      solution: {
+        text: "The application was built using React and TypeScript, focusing on predictable state updates and intuitive interactions.\n\nKey implementation details:",
+        list: [
+          "State management with React hooks",
+          "Drag-and-drop functionality for reordering tasks",
+          "Local storage integration for task persistence",
+          "Tailwind CSS for layout, styling, and responsiveness",
+          "Reusable components for maintainable code",
+          "Light and dark theme support with toggle",
+          "Responsive design and hover states for all interactive elements",
+        ],
+      },
+      outcome: {
+        text: "The final result is a lightweight, responsive, and interactive todo app that performs well and feels intuitive to use.\n\nThrough this project, I strengthened my understanding of:",
+        list: [
+          "Managing complex UI state in React",
+          "Type-safe component and state design with TypeScript",
+          "Implementing drag-and-drop interactions",
+          "Persisting client-side data with local storage",
+          "Theme toggling and responsive design patterns",
+        ],
+      },
+    },
+  },
+  {
+    id: 2,
     title: "Recipe Finder",
     shortDesc:
       "A smart culinary companion that bridges the gap between your pantry and your next meal.",
@@ -47,7 +99,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 2,
+    id: 3,
     title: "Weather App",
     shortDesc:
       "A purpose-built meteorological dashboard designed for clarity and immediacy.",
@@ -94,7 +146,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 3,
+    id: 4,
     title: "Timber and Hatchet",
     shortDesc:
       "A high-performance recruitment platform connecting US enterprises with elite nearshore talent.",
@@ -142,7 +194,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    id: 4,
+    id: 5,
     title: "Dictionary Web App",
     shortDesc:
       "A pure linguistics tool prioritizing focus, typography, and speed.",

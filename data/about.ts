@@ -8,6 +8,7 @@ export const SKILLS = [
   "Next.js",
   "TypeScript",
   "Tailwind CSS",
+  "Vitest",
   "Framer Motion",
   "Storybook",
   "GraphQL",
@@ -15,8 +16,9 @@ export const SKILLS = [
 
 export const BIO: BioData = {
   paragraphs: [
-    "Results-driven Frontend Engineer with hands-on experience building responsive, user-focused interfaces using React, Next.js, and TypeScript. I have contributed to projects at Glassdoor and as a freelance developer, crafting reusable, efficient UI components that enhance user experience, streamline development, and ensure smooth, reliable performance.",
-    "I love learning and building for the web, turning ideas into functional, engaging experiences that help clients bring their visions to life. Outside of coding, I enjoy streaming Valorant, playing and watching sports, going to the gym, and baking.",
+    "Software Engineer with strong frontend expertise and full-stack exposure, specializing in building scalable, high-performance web applications.",
+    "Experienced with React, Next.js, TypeScript, and modern UI architecture, alongside API integration, testing, and database-driven features.",
+    "Proven track record delivering production-ready software in agile environments and freelance settings.",
   ],
 };
 
@@ -26,10 +28,10 @@ export const MISSION_LOG: ExperienceItem[] = [
     company: "Glassdoor",
     period: "05/2025 – 08/2025",
     tasks: [
-      "Migrated core UI modules (Left & Right Rail) to Next.js App Router.",
-      "Developed reusable UI components in Storybook for design consistency.",
-      "Integrated GraphQL for efficient, type-safe data fetching.",
-      "Implemented unit tests with Vitest, increasing coverage.",
+      "Migrated core production UI modules to Next.js App Router using React and TypeScript, improving application scalability and long-term maintainability.",
+      "Developed and Shipped multiple user-facing features (Joined Bowls, Company Bowls, Careers, Careers Advice) used across employer profiles.",
+      "Integrated GraphQL APIs for efficient, type-safe data fetching and frontend state management.",
+      "Implemented automated unit tests with Vitest to increase test coverage and ensure maintainable, high-quality code.",
     ],
   },
   {
@@ -37,9 +39,9 @@ export const MISSION_LOG: ExperienceItem[] = [
     company: "The Hero Company",
     period: "03/2024 – 09/2025",
     tasks: [
-      "Authored 20+ responsive websites, increasing validation rates by 10%.",
-      "Maintained security/performance via MySQL Workbench & SSL management.",
-      "Managed SSL renewals to reduce security vulnerabilities.",
+      "Authored and maintained 20+ responsive web applications using modern frontend frameworks, improving user experience and conversion flows.",
+      "Maintained site security and performance through database updates, SQL workflows, and SSL certificate management.",
+      "Utilized MySQL tools for data-driven frontend updates while supporting site reliability and optimization.",
     ],
   },
   {
@@ -47,9 +49,9 @@ export const MISSION_LOG: ExperienceItem[] = [
     company: "Freelance",
     period: "01/2018 – 09/2025",
     tasks: [
-      "Developed 15+ websites for e-commerce and small businesses.",
-      "Achieved Top Rated Plus status and 100% Job Success Score on Upwork.",
-      "Improved revenue/trust by integrating secure payment gateways.",
+      "Developed 15+ production websites and web applications using HTML, CSS, JavaScript, React, Tailwind CSS, and WordPress.",
+      "Achieved Top Rated Plus status and 100% Job Success Score on Upwork through consistent high-quality delivery and client satisfaction .",
+      "Implemented secure payment gateways, API integrations, and documentation to support business operations and long-term maintainability.",
     ],
   },
 ];

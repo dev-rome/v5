@@ -11,9 +11,6 @@ export function FloatingDock() {
 
     useEffect(() => {
         let ticking = false;
-        // PERFORMANCE TIP: This pattern is called "Throttling".
-        // Instead of running logic on every single pixel scroll (which causes lag),
-        // we use requestAnimationFrame to limit updates to the screen's refresh rate.
         const handleScroll = () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {

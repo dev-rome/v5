@@ -50,7 +50,7 @@ export const MISSION_LOG: ExperienceItem[] = [
     period: "01/2018 – 09/2025",
     tasks: [
       "Developed 15+ production websites and web applications using HTML, CSS, JavaScript, React, Tailwind CSS, and WordPress.",
-      "Achieved Top Rated Plus status and 100% Job Success Score on Upwork through consistent high-quality delivery and client satisfaction .",
+      "Achieved Top Rated Plus status and 100% Job Success Score on Upwork through consistent high-quality delivery and client satisfaction.",
       "Implemented secure payment gateways, API integrations, and documentation to support business operations and long-term maintainability.",
     ],
   },
